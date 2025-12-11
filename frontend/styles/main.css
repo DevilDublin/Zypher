@@ -1134,5 +1134,21 @@ body.dark-mode .theme-toggle::before {
     .contact-form {
         padding: 16px 16px;
         border-radius: 20px;
+
+        body.dark-mode {
+    --bg-body: #0f1115;
+    --bg-elevated: #1a1c21;
+    --bg-muted: #16181d;
+
+    --text-main: #ffffff;
+    --text-soft: #c9ccd4;
+    --text-softer: #a4a9b3;
+
+    --accent: #ffffff;
+    --accent-soft: #444;
+
+    --border-subtle: rgba(255, 255, 255, 0.12);
+}
+
     }
 }
