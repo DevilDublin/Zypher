@@ -1,101 +1,188 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zypher Agents — Demos Command Deck</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/main.css" />
-  <style>
-    .home-pill{position:fixed;left:18px;top:18px;z-index:50;padding:8px 12px;border-radius:999px;
-      background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);color:var(--text);text-decoration:none}
-    .home-pill:hover{background:rgba(255,255,255,0.1)}
-  </style>
+    <meta charset="UTF-8" />
+    <title>Zypher AI – Live demos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explore live demos of Zypher AI voice agents, chatbots, and automation flows." />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script defer src="js/site.js"></script>
+    <script defer src="js/demos.js"></script>
 </head>
-<body>
-  <div class="bg" aria-hidden="true">
-    <canvas id="bgParticles"></canvas>
-    <div class="bg-aurora"></div>
-  </div>
+<body class="page-demos">
+<header class="site-header">
+    <div class="container nav-container">
+        <a href="index.html" class="logo">
+            <span class="logo-mark"></span>
+            <span class="logo-text">Zypher<span class="logo-accent">AI</span></span>
+        </a>
 
-  <a href="./index.html" class="home-pill">← Interface</a>
+        <nav class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="demos.html" class="is-active">Demos</a>
+            <a href="index.html#use-cases">Use cases</a>
+            <a href="index.html#process">Process</a>
+            <a href="contact.html">Contact</a>
+        </nav>
 
-  <main class="deck" aria-live="polite">
-    <h1 class="deck-title">Command Deck</h1>
-    <p class="deck-sub">Explore industry-ready agents. Live previews open as holographic terminals.</p>
-
-    <section class="deck-grid" role="list">
-      <article class="card live" role="listitem">
-        <div class="card-head">
-          <span class="badge">LIVE</span>
-          <h2 class="card-title">Appointment Setter — Real Estate</h2>
+        <div class="nav-actions">
+            <a href="contact.html" class="btn btn-primary">Book a call</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span>
+            </button>
         </div>
-        <p class="card-copy">Qualifies leads, books viewings, writes follow-ups. Voice + chat.</p>
-        <div class="card-actions">
-          <button class="btn-primary open-demo" data-demo="realestate">Open live preview</button>
-        </div>
-      </article>
-
-      <article class="card live" role="listitem">
-        <div class="card-head">
-          <span class="badge">LIVE</span>
-          <h2 class="card-title">Support Triage — SaaS</h2>
-        </div>
-        <p class="card-copy">Sorts tickets by intent, answers FAQs, escalates when needed.</p>
-        <div class="card-actions">
-          <button class="btn-primary open-demo" data-demo="saas">Open live preview</button>
-        </div>
-      </article>
-
-      <article class="card dim" role="listitem">
-        <div class="card-head">
-          <span class="badge neutral">BETA</span>
-          <h2 class="card-title">Claims Bot — Insurance</h2>
-        </div>
-        <p class="card-copy">Captures FNOL, validates docs, generates claim references.</p>
-        <div class="card-actions">
-          <a class="btn-ghost" href="./contact.html?subject=Insurance%20Claims%20Bot">Request access</a>
-        </div>
-      </article>
-
-      <article class="card dim" role="listitem">
-        <div class="card-head">
-          <span class="badge neutral">BETA</span>
-          <h2 class="card-title">Concierge — Hospitality</h2>
-        </div>
-        <p class="card-copy">Books tables, answers venue queries, upsells experiences.</p>
-        <div class="card-actions">
-          <a class="btn-ghost" href="./contact.html?subject=Hospitality%20Concierge">Request access</a>
-        </div>
-      </article>
-    </section>
-  </main>
-
-  <!-- Modal -->
-  <div id="demoModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="demoTitle" aria-hidden="true">
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-card">
-      <header class="modal-head">
-        <h2 id="demoTitle">Live Preview</h2>
-        <button class="btn-ghost" data-close aria-label="Close">✕</button>
-      </header>
-      <div class="modal-body">
-        <div class="terminal" role="region" aria-label="Chat terminal">
-          <div class="term-log" id="termLog" aria-live="polite"></div>
-          <form id="termForm" class="term-form" autocomplete="off">
-            <input id="termInput" class="term-input" type="text" placeholder="Type a message…" aria-label="Message" />
-            <button class="btn-primary" type="submit">Send</button>
-          </form>
-        </div>
-      </div>
     </div>
-  </div>
+</header>
 
-  <footer class="site-footer" data-visible="true">
-    <p>© <span id="year"></span> Zypher Agents. All rights reserved.</p>
-  </footer>
+<main>
+    <section class="hero hero-slim">
+        <div class="container hero-grid hero-grid-slim">
+            <div class="hero-copy">
+                <p class="eyebrow">Live demo gallery</p>
+                <h1>See the agents in action.</h1>
+                <p class="hero-subtitle">
+                    Short, unedited demos of real agents handling real scenarios – from appointment booking to
+                    lead qualification and follow-up.
+                </p>
+            </div>
+            <div class="hero-visual hero-visual-note">
+                <div class="note-card">
+                    <p class="small-label">How to use this page</p>
+                    <ul>
+                        <li>Pick a demo type below to filter.</li>
+                        <li>Click a card to focus on that demo.</li>
+                        <li>Each card can embed audio/video when you’re ready.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="./js/demos.js" defer></script>
-  <script src="./js/site.js" defer></script>
+    <section class="section section-muted-top">
+        <div class="container">
+            <div class="demo-controls">
+                <div class="pill-group" id="demo-filters">
+                    <button class="pill pill-filter is-active" data-filter="all">All</button>
+                    <button class="pill pill-filter" data-filter="voice">Voice agents</button>
+                    <button class="pill pill-filter" data-filter="chat">Chat agents</button>
+                    <button class="pill pill-filter" data-filter="automation">Automations</button>
+                </div>
+            </div>
+
+            <div class="demo-grid" id="demo-grid">
+                <!-- Demo 1 -->
+                <article class="demo-card is-active" data-type="voice">
+                    <header class="demo-card-header">
+                        <span class="pill pill-soft">Voice • Real estate</span>
+                        <h2>24/7 property viewing assistant</h2>
+                    </header>
+                    <p class="demo-description">
+                        A voice agent that answers inbound calls, qualifies the caller, and books a viewing directly
+                        into the agent’s Google Calendar.
+                    </p>
+                    <div class="demo-media">
+                        <!-- Replace this block with your actual audio / iframe embeds -->
+                        <div class="demo-placeholder">
+                            <span class="play-icon">▶</span>
+                            <p>Audio demo coming soon – drop in your VAPI recording here.</p>
+                        </div>
+                    </div>
+                    <footer class="demo-meta">
+                        <span>Integrations: Google Calendar, Make.com</span>
+                        <span class="dot">•</span>
+                        <span>Avg call length: 2–3 mins</span>
+                    </footer>
+                </article>
+
+                <!-- Demo 2 -->
+                <article class="demo-card" data-type="chat">
+                    <header class="demo-card-header">
+                        <span class="pill pill-soft">Chat • Services</span>
+                        <h2>Website intake & qualification bot</h2>
+                    </header>
+                    <p class="demo-description">
+                        A site widget that asks layered questions, scores leads, and hands only serious ones to your inbox or CRM.
+                    </p>
+                    <div class="demo-media">
+                        <div class="demo-placeholder">
+                            <span class="play-icon">⌨</span>
+                            <p>Embed your chat widget or Loom walkthrough here.</p>
+                        </div>
+                    </div>
+                    <footer class="demo-meta">
+                        <span>Channels: Web chat, WhatsApp</span>
+                        <span class="dot">•</span>
+                        <span>Lead score pushed to CRM</span>
+                    </footer>
+                </article>
+
+                <!-- Demo 3 -->
+                <article class="demo-card" data-type="automation">
+                    <header class="demo-card-header">
+                        <span class="pill pill-soft">Automation • Internal</span>
+                        <h2>Meeting summary + follow-up engine</h2>
+                    </header>
+                    <p class="demo-description">
+                        After each call, the agent summarises the conversation, updates the deal, and drafts a follow-up email.
+                    </p>
+                    <div class="demo-media">
+                        <div class="demo-placeholder">
+                            <span class="play-icon">⚙</span>
+                            <p>Screenshot or loom of your Make.com / n8n flow can sit here.</p>
+                        </div>
+                    </div>
+                    <footer class="demo-meta">
+                        <span>Outputs: CRM notes, email draft, Slack ping</span>
+                        <span class="dot">•</span>
+                        <span>Avg setup: 3–5 days</span>
+                    </footer>
+                </article>
+
+                <!-- Demo 4 -->
+                <article class="demo-card" data-type="voice">
+                    <header class="demo-card-header">
+                        <span class="pill pill-soft">Voice • Service business</span>
+                        <h2>Missed-call rescue agent</h2>
+                    </header>
+                    <p class="demo-description">
+                        When you miss a call, the agent rings back, apologises, captures the details, and books the next step.
+                    </p>
+                    <div class="demo-media">
+                        <div class="demo-placeholder">
+                            <span class="play-icon">▶</span>
+                            <p>Second audio / call log embed goes here.</p>
+                        </div>
+                    </div>
+                    <footer class="demo-meta">
+                        <span>Works with: Twilio, VAPI</span>
+                        <span class="dot">•</span>
+                        <span>Ideal for solo founders</span>
+                    </footer>
+                </article>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div class="footer-main">
+            <div class="logo footer-logo">
+                <span class="logo-mark"></span>
+                <span class="logo-text">Zypher<span class="logo-accent">AI</span></span>
+            </div>
+            <p class="footer-copy">
+                All demos are custom-built. Your version will be tuned to your tools, your tone, your clients.
+            </p>
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-meta">
+            <span>&copy; <span id="year"></span> Zypher AI</span>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
