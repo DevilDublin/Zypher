@@ -1,79 +1,160 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Zypher Agents — Secure Transmission</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles/main.css" />
-  <style>
-    .home-pill{position:fixed;left:18px;top:18px;z-index:50;padding:8px 12px;border-radius:999px;
-      background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.16);color:var(--text);text-decoration:none}
-    .home-pill:hover{background:rgba(255,255,255,0.1)}
-  </style>
+    <meta charset="UTF-8" />
+    <title>Zypher AI – Contact</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Tell Zypher AI about your use case and we’ll design an agent around your business." />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script defer src="js/site.js"></script>
 </head>
-<body>
-  <div class="bg" aria-hidden="true">
-    <canvas id="bgParticles"></canvas>
-    <div class="bg-aurora"></div>
-  </div>
+<body class="page-contact">
+<header class="site-header">
+    <div class="container nav-container">
+        <a href="index.html" class="logo">
+            <span class="logo-mark"></span>
+            <span class="logo-text">Zypher<span class="logo-accent">AI</span></span>
+        </a>
 
-  <!-- Back to Interface -->
-  <a href="./index.html" class="home-pill">← Interface</a>
+        <nav class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="demos.html">Demos</a>
+            <a href="index.html#use-cases">Use cases</a>
+            <a href="index.html#process">Process</a>
+            <a href="contact.html" class="is-active">Contact</a>
+        </nav>
 
-  <main class="uplink" aria-live="polite">
-    <h1 class="uplink-title">INITIATE SECURE TRANSMISSION</h1>
-    <p class="uplink-sub">Tell us your objective. We’ll respond with a blueprint.</p>
+        <div class="nav-actions">
+            <a href="demos.html" class="btn btn-ghost">View demos</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span>
+            </button>
+        </div>
+    </div>
+</header>
 
-    <form id="contactForm" class="uplink-form" novalidate>
-      <div class="field">
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" required placeholder="Your full name" />
-      </div>
-      <div class="field">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" required placeholder="you@company.com" />
-      </div>
-      <div class="field">
-        <label for="company">Company</label>
-        <input id="company" name="company" type="text" placeholder="Company Ltd" />
-      </div>
-      <div class="field">
-        <label for="subject">Subject</label>
-        <input id="subject" name="subject" type="text" placeholder="e.g., Real Estate Appointment Bot" />
-      </div>
-      <div class="field full">
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="6" placeholder="Briefly describe your goal, timeline, and budget range."></textarea>
-      </div>
-      <div class="form-actions">
-        <button class="btn-primary" type="submit">TRANSMIT REQUEST</button>
-        <span id="txStatus" class="tx-status" role="status" aria-live="polite"></span>
-      </div>
-    </form>
-  </main>
+<main>
+    <section class="hero hero-slim">
+        <div class="container hero-grid hero-grid-slim">
+            <div class="hero-copy">
+                <p class="eyebrow">Work with Zypher</p>
+                <h1>Tell us what you’d like to automate.</h1>
+                <p class="hero-subtitle">
+                    A short form, a quick loom, or a simple message is enough.
+                    We’ll come back with what we’d build, how long it’ll take, and an estimated range.
+                </p>
+            </div>
+            <div class="hero-visual hero-visual-note">
+                <div class="note-card">
+                    <p class="small-label">Prefer email?</p>
+                    <p>
+                        You can also reach out directly at<br />
+                        <strong>hello@zypher.ai</strong> (placeholder – swap for your real inbox).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer class="site-footer" data-visible="true">
-    <p>© <span id="year"></span> Zypher Agents. All rights reserved.</p>
-  </footer>
+    <section class="section section-muted-top">
+        <div class="container contact-grid">
+            <form class="contact-form" id="contact-form">
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" autocomplete="name" required />
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Email</label>
+                        <input id="email" name="email" type="email" autocomplete="email" required />
+                    </div>
+                </div>
 
-  <script src="./js/site.js" defer></script>
-  <script>
-    const params = new URLSearchParams(location.search);
-    const subj = params.get('subject');
-    if (subj) document.getElementById('subject').value = subj;
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="company">Company (optional)</label>
+                        <input id="company" name="company" type="text" autocomplete="organization" />
+                    </div>
+                    <div class="form-field">
+                        <label for="website">Website (optional)</label>
+                        <input id="website" name="website" type="url" placeholder="https://…" />
+                    </div>
+                </div>
 
-    const form = document.getElementById('contactForm');
-    const status = document.getElementById('txStatus');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (!form.reportValidity()) return;
-      status.textContent = 'SENDING SIGNAL…';
-      setTimeout(() => {
-        status.textContent = 'TRANSMISSION SUCCESSFUL. ZYPHER AGENTS WILL RESPOND SHORTLY.';
-        form.reset();
-      }, 1100);
-    });
-  </script>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="use-case">What would you like to automate?</label>
+                        <textarea id="use-case" name="use-case" rows="4" placeholder="A quick overview is perfect." required></textarea>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="budget">Rough monthly budget</label>
+                        <select id="budget" name="budget">
+                            <option value="">Select a range</option>
+                            <option value="under-500">Under £500</option>
+                            <option value="500-1500">£500 – £1,500</option>
+                            <option value="1500-3000">£1,500 – £3,000</option>
+                            <option value="3000-plus">£3,000+</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="timeline">Ideal go-live timeline</label>
+                        <select id="timeline" name="timeline">
+                            <option value="">Select a timeline</option>
+                            <option value="asap">ASAP / this month</option>
+                            <option value="1-3-months">1–3 months</option>
+                            <option value="3-plus">3+ months</option>
+                            <option value="exploring">Just exploring options</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <button type="submit" class="btn btn-primary">Send enquiry</button>
+                    <p class="form-footnote">No spam. No newsletter. Just a straightforward reply.</p>
+                </div>
+            </form>
+
+            <aside class="contact-aside">
+                <div class="contact-aside-card">
+                    <p class="small-label">What happens next</p>
+                    <ol class="aside-list">
+                        <li>We quickly sanity-check that your use case is a good fit for agents.</li>
+                        <li>We’ll reply with 2–3 ways we’d approach it and a rough range.</li>
+                        <li>If it makes sense, we book a short call and start mapping flows.</li>
+                    </ol>
+                </div>
+
+                <div class="contact-aside-card subtle">
+                    <p class="small-label">Based in</p>
+                    <p>London, working with clients across the UK, EU and beyond.</p>
+                </div>
+            </aside>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div class="footer-main">
+            <div class="logo footer-logo">
+                <span class="logo-mark"></span>
+                <span class="logo-text">Zypher<span class="logo-accent">AI</span></span>
+            </div>
+            <p class="footer-copy">
+                We build small, sharp systems that quietly change how your business runs.
+            </p>
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="demos.html">Demos</a>
+        </div>
+        <div class="footer-meta">
+            <span>&copy; <span id="year"></span> Zypher AI</span>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
