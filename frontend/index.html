@@ -17,7 +17,7 @@
         </a>
 
         <nav class="nav-links" id="nav-links">
-            <a href="#hero">Home</a>
+            <a href="#hero" class="is-active">Home</a>
             <a href="demos.html">Demos</a>
             <a href="#use-cases">Use cases</a>
             <a href="#process">Process</a>
@@ -36,7 +36,7 @@
 
 <main>
     <!-- Hero -->
-    <section id="hero" class="hero">
+    <section id="hero" class="hero" data-animate="fade-up">
         <div class="container hero-grid">
             <div class="hero-copy">
                 <p class="eyebrow">Boutique AI agency • London</p>
@@ -62,15 +62,15 @@
                     </div>
                     <div>
                         <span class="meta-label">Built on</span>
-                        <span class="meta-value">OpenAI · VAPI · Make</span>
+                        <span class="meta-value">OpenAI · Telephony · No-code</span>
                     </div>
                 </div>
             </div>
 
-            <div class="hero-visual">
-                <div class="hero-card">
+            <div class="hero-visual" data-parallax>
+                <div class="hero-card glow-soft">
                     <div class="hero-card-header">
-                        <span class="pill pill-soft">Real estate voice agent</span>
+                        <span class="pill pill-soft">Voice agent • Service business</span>
                         <span class="status-dot">Live</span>
                     </div>
                     <div class="hero-card-body">
@@ -82,13 +82,13 @@
                             <div class="stream-row stream-row-agent">
                                 <span class="stream-avatar stream-avatar-agent">Z</span>
                                 <p>
-                                    “Absolutely. I’ve checked your calendar and the agent’s availability.
-                                    You’re confirmed for <strong>4:30pm</strong>. I’ve just emailed the details.”
+                                    “Absolutely. I’ve checked availability and you’re
+                                    confirmed for <strong>4:30pm</strong>. I’ve just sent the details to your email and SMS.”
                                 </p>
                             </div>
                             <div class="stream-row stream-row-agent faint">
                                 <span class="stream-avatar stream-avatar-agent">Z</span>
-                                <p>Webhook → Google Calendar · Follow-up SMS queued</p>
+                                <p>Webhook → Calendar · CRM · Follow-up sequence queued</p>
                             </div>
                         </div>
                     </div>
@@ -97,7 +97,7 @@
                         <span class="pill pill-outline">Human handoff built-in</span>
                     </div>
                 </div>
-                <div class="hero-stats-card">
+                <div class="hero-stats-card float-soft" data-animate="fade-up-delayed">
                     <p class="small-label">What we typically unlock</p>
                     <div class="hero-stats-grid">
                         <div>
@@ -119,7 +119,7 @@
     </section>
 
     <!-- Trust strip -->
-    <section class="trust-strip">
+    <section class="trust-strip" data-animate="fade-up">
         <div class="container trust-grid">
             <p class="trust-label">Plug into your existing stack</p>
             <div class="trust-icons">
@@ -133,7 +133,7 @@
     </section>
 
     <!-- Use cases -->
-    <section id="use-cases" class="section">
+    <section id="use-cases" class="section" data-animate="fade-up">
         <div class="container">
             <div class="section-header">
                 <h2>Where Zypher quietly takes over.</h2>
@@ -143,7 +143,7 @@
             </div>
 
             <div class="cards-grid cards-grid-3">
-                <article class="card">
+                <article class="card hover-lift">
                     <h3>Lead capture & qualification</h3>
                     <p>
                         AI agents that greet visitors, ask smart questions, score their intent, and push only real
@@ -156,7 +156,7 @@
                     </ul>
                 </article>
 
-                <article class="card">
+                <article class="card hover-lift">
                     <h3>Appointment setting & routing</h3>
                     <p>
                         Voice and chat agents that negotiate time, check availability, and send calendar invites on your behalf.
@@ -168,7 +168,7 @@
                     </ul>
                 </article>
 
-                <article class="card">
+                <article class="card hover-lift">
                     <h3>Operational automations</h3>
                     <p>
                         Behind-the-scenes flows that update records, send follow-ups, and keep everyone in the loop.
@@ -184,7 +184,7 @@
     </section>
 
     <!-- Process -->
-    <section id="process" class="section section-muted">
+    <section id="process" class="section section-muted" data-animate="fade-up">
         <div class="container">
             <div class="section-header">
                 <h2>A simple, opinionated build process.</h2>
@@ -194,7 +194,7 @@
             </div>
 
             <ol class="process-steps">
-                <li class="process-step">
+                <li class="process-step hover-line">
                     <span class="step-number">01</span>
                     <div>
                         <h3>Discovery & call flows</h3>
@@ -203,7 +203,7 @@
                         </p>
                     </div>
                 </li>
-                <li class="process-step">
+                <li class="process-step hover-line">
                     <span class="step-number">02</span>
                     <div>
                         <h3>Prototype & test sandbox</h3>
@@ -212,7 +212,7 @@
                         </p>
                     </div>
                 </li>
-                <li class="process-step">
+                <li class="process-step hover-line">
                     <span class="step-number">03</span>
                     <div>
                         <h3>Integration & go-live</h3>
@@ -232,7 +232,7 @@
 </main>
 
 <footer class="site-footer">
-    <div class="container footer-grid">
+    <div class="container footer-grid" data-animate="fade-up">
         <div class="footer-main">
             <div class="logo footer-logo">
                 <span class="logo-mark"></span>
