@@ -8,18 +8,22 @@
     <link rel="stylesheet" href="styles/main.css" />
     <script defer src="js/site.js"></script>
 </head>
+
 <body class="page-contact">
 <header class="site-header">
     <div class="container nav-container">
 
+        <!-- LEFT SIDE: LOGO + THEME TOGGLE -->
         <div class="nav-left">
             <a href="index.html" class="logo">
-                <span class="logo-mark"></span>
+                <img src="assets/zypher-logo.svg" alt="Zypher Logo" class="logo-svg" />
                 <span class="logo-text">Zypher<span class="logo-accent">Agent</span></span>
             </a>
+
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">◈</button>
         </div>
 
+        <!-- NAV LINKS -->
         <nav class="nav-links" id="nav-links">
             <a href="index.html">Home</a>
             <a href="demos.html">Demos</a>
@@ -28,6 +32,7 @@
             <a href="contact.html" class="is-active">Contact</a>
         </nav>
 
+        <!-- RIGHT SIDE ACTIONS -->
         <div class="nav-actions">
             <a href="demos.html" class="btn btn-ghost">View demos</a>
             <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
@@ -39,8 +44,6 @@
 </header>
 
 <main>
-
-    <!-- HERO -->
     <section class="hero hero-slim" data-animate="fade-up">
         <div class="container hero-grid hero-grid-slim">
             <div class="hero-copy">
@@ -50,34 +53,27 @@
                     You do not need a long brief. A few lines on where you’re stuck and what “good” would look like is enough for us to respond with a clear next step.
                 </p>
             </div>
-
             <div class="hero-visual hero-visual-note">
                 <div class="note-card glow-soft">
                     <p class="small-label">Prefer email?</p>
-                    <p>You can also reach us at<br><strong>zypheragent25@gmail.com</strong>.</p>
+                    <p>
+                        You can also reach us at<br />
+                        <strong>zypheragent25@gmail.com</strong>.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT FORM SECTION -->
     <section class="section section-muted-top" data-animate="fade-up">
         <div class="container contact-grid">
 
-            <form
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
-                class="contact-form"
-                id="contact-form"
-            >
+            <!-- NETLIFY FORM -->
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" id="contact-form">
                 <input type="hidden" name="form-name" value="contact" />
 
                 <p style="display:none;">
-                    <label>Don’t fill this in if you’re human:
-                        <input name="bot-field" />
-                    </label>
+                    <label>Don’t fill this in if you’re human: <input name="bot-field" /></label>
                 </p>
 
                 <div class="form-row">
@@ -85,7 +81,6 @@
                         <label for="name">Name</label>
                         <input id="name" name="name" type="text" autocomplete="name" required />
                     </div>
-
                     <div class="form-field">
                         <label for="email">Email</label>
                         <input id="email" name="email" type="email" autocomplete="email" required />
@@ -97,7 +92,6 @@
                         <label for="company">Company (optional)</label>
                         <input id="company" name="company" type="text" autocomplete="organization" />
                     </div>
-
                     <div class="form-field">
                         <label for="website">Website (optional)</label>
                         <input id="website" name="website" type="url" placeholder="https://…" />
@@ -122,7 +116,6 @@
                             <option value="3000-plus">£3,000+</option>
                         </select>
                     </div>
-
                     <div class="form-field">
                         <label for="timeline">Ideal go-live timeline</label>
                         <select id="timeline" name="timeline">
@@ -146,33 +139,31 @@
                 <div class="contact-aside-card">
                     <p class="small-label">What to expect</p>
                     <ol class="aside-list">
-                        <li>We confirm if your use case is a strong fit.</li>
-                        <li>You get 1–2 practical options & timelines.</li>
-                        <li>If sensible, we book a short scoping call.</li>
+                        <li>We’ll confirm if your use case is a strong fit for an AI agent or automation flow.</li>
+                        <li>You’ll receive 1–2 practical options with timelines and investment ranges.</li>
+                        <li>If it sounds sensible, we book a call and start mapping actual journeys together.</li>
                     </ol>
                 </div>
 
                 <div class="contact-aside-card subtle">
                     <p class="small-label">Where we work</p>
-                    <p>Based in London, working with teams across the UK, Europe and globally.</p>
+                    <p>We’re based in London and work with clients across the UK, Europe and globally.</p>
                 </div>
             </aside>
 
         </div>
     </section>
-
 </main>
 
 <footer class="site-footer">
     <div class="container footer-grid" data-animate="fade-up">
-
         <div class="footer-main">
-            <div class="logo footer-logo">
-                <span class="logo-mark"></span>
+            <a href="index.html" class="logo footer-logo">
+                <img src="assets/zypher-logo.svg" alt="Zypher Logo" class="logo-svg" />
                 <span class="logo-text">Zypher<span class="logo-accent">Agent</span></span>
-            </div>
+            </a>
             <p class="footer-copy">
-                If you’re unsure whether an AI agent is right for you, feel free to ask — we’re happy to say “no” when it doesn’t make sense.
+                If you’re unsure whether an AI agent is the right tool, feel free to ask. We’ll always tell you honestly.
             </p>
         </div>
 
@@ -184,7 +175,6 @@
         <div class="footer-meta">
             <span>&copy; <span id="year"></span> Zypher Agent</span>
         </div>
-
     </div>
 </footer>
 
