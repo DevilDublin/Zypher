@@ -8,38 +8,44 @@
   <script defer src="js/site.js"></script>
 </head>
 
-<body>
+<body class="light">
+
   <header class="navbar">
-    <div class="brand">Zypher AI</div>
-    <nav>
+    <div class="nav-left">
+      <img src="assets/zypher-logo.svg" class="logo" alt="Zypher Logo">
+      <span class="brand">Zypher AI</span>
+    </div>
+
+    <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="demos.html" class="active">Demos</a>
       <a href="contact.html">Contact</a>
     </nav>
+
     <button id="themeToggle" class="theme-btn">◈</button>
   </header>
 
-  <main class="page">
-    <h1>Live Demos</h1>
+  <main class="page-container">
+    <h1 class="page-title fade-up">AI Demonstrations</h1>
 
     <div class="demo-grid">
 
-      <div class="demo-card">
+      <div class="demo-card fade-up">
         <div class="demo-visual"></div>
         <h2>Lead Qualification AI</h2>
-        <p>Real-time conversation routing & intelligent filters.</p>
+        <p>Understands customer intent and filters leads automatically.</p>
       </div>
 
-      <div class="demo-card">
+      <div class="demo-card fade-up">
         <div class="demo-visual"></div>
-        <h2>Appointment Agent</h2>
-        <p>Automated booking workflows integrated with calendars.</p>
+        <h2>Appointment Scheduler</h2>
+        <p>Fully automated booking linked with your calendar system.</p>
       </div>
 
-      <div class="demo-card">
+      <div class="demo-card fade-up">
         <div class="demo-visual"></div>
         <h2>Voice AI (Coming Soon)</h2>
-        <p>High-quality conversational voice agents are on the way.</p>
+        <p>High-fidelity conversational AI using Vapi & Twilio.</p>
       </div>
 
     </div>
@@ -48,5 +54,6 @@
   <footer class="footer">
     © 2025 Zypher AI — All rights reserved.
   </footer>
+
 </body>
 </html>
