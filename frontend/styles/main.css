@@ -1,3 +1,6 @@
+/* ------------------------------
+   ROOT VARIABLE DEFINITIONS
+------------------------------ */
 :root {
     --bg-body: #f5f5f7;
     --bg-elevated: #ffffff;
@@ -18,19 +21,24 @@
     --radius-md: 16px;
     --radius-pill: 999px;
 
-    --shadow-soft: 0 20px 55px rgba(15, 23, 42, 0.12);
-    --shadow-subtle: 0 10px 30px rgba(15, 23, 42, 0.05);
+    --shadow-soft: 0 20px 55px rgba(15,23,42,0.12);
+    --shadow-subtle: 0 10px 30px rgba(15,23,42,0.05);
 
     --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
 
     --transition-fast: 0.15s ease-out;
     --transition-mid: 0.25s ease-out;
-    body.dark-mode {
+}
+
+/* ------------------------------
+   DARK MODE VARIABLES (GLOBAL)
+------------------------------ */
+body.dark-mode {
     --bg-body: #0f1115;
     --bg-elevated: #1a1c21;
     --bg-muted: #16181d;
 
-    --text-main: #f2f4f8;
+    --text-main: #ffffff;
     --text-soft: #c9ccd4;
     --text-softer: #a4a9b3;
 
@@ -38,8 +46,6 @@
     --accent-soft: #444;
 
     --border-subtle: rgba(255, 255, 255, 0.12);
-}
-
 }
 
 /* Reset-ish */
@@ -171,17 +177,6 @@ button {
     width: 100%;
 }
 
-.nav-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.nav-left {
-    display: flex;
-    align-items: center;
-    gap: 12px; /* spacing between logo + icon */
-}
-
 /* Buttons */
 .btn {
     display: inline-flex;
@@ -244,6 +239,39 @@ button {
     margin: 0 auto;
 }
 
+/* 🔥 FIXED: Theme toggle button */
+.theme-toggle {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+}
+
+.theme-toggle::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #e5e7eb;
+    border: 1px solid rgba(0,0,0,0.25);
+    transform: rotate(45deg);
+    border-radius: 4px;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+body.dark-mode .theme-toggle::before {
+    background: #111827;
+    border-color: rgba(255,255,255,0.3);
+}
+
+/* 🔥 FIXED: Align diamond + logo inline */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
 /* Hero */
 .hero {
     padding: 56px 0 72px;
@@ -456,7 +484,7 @@ button {
     color: var(--text-soft);
 }
 
-/* Hero note variant */
+/* Hero note block */
 .hero-visual-note {
     display: flex;
     justify-content: flex-end;
@@ -500,34 +528,8 @@ button {
     border-color: rgba(148, 163, 184, 0.45);
     color: var(--text-soft);
 }
-.theme-toggle {
-    width: 18px;
-    height: 18px;
-    position: relative;
-    margin-left: 12px;
-    cursor: pointer;
-    border: none;
-    background: none;
-    padding: 0;
-}
 
-.theme-toggle::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: #e5e7eb;
-    border: 1px solid rgba(0,0,0,0.25);
-    transform: rotate(45deg);
-    border-radius: 4px;
-    transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-body.dark-mode .theme-toggle::before {
-    background: #111827;
-    border-color: rgba(255,255,255,0.3);
-
-}
-
+/* Status dot */
 .status-dot::before {
     content: "";
     display: inline-block;
@@ -568,7 +570,6 @@ body.dark-mode .theme-toggle::before {
     gap: 10px 18px;
     color: var(--text-soft);
 }
-
 /* Section header */
 .section-header {
     max-width: 580px;
@@ -685,7 +686,7 @@ body.dark-mode .theme-toggle::before {
     font-size: 0.95rem;
 }
 
-/* Demos */
+/* DEMOS */
 .demo-controls {
     display: flex;
     justify-content: space-between;
@@ -701,7 +702,7 @@ body.dark-mode .theme-toggle::before {
 
 .pill-filter {
     background: rgba(15,23,42,0.04);
-    border-color: rgba(148, 163, 184, 0.45);
+    border-color: rgba(148,163,184,0.45);
     cursor: pointer;
 }
 
@@ -777,11 +778,13 @@ body.dark-mode .theme-toggle::before {
     gap: 10px;
     align-items: center;
 }
+
 .demo-coming-soon {
     margin-top: 12px;
     font-size: 0.85rem;
     opacity: 0.7;
 }
+
 .play-icon {
     display: inline-flex;
     align-items: center;
@@ -801,11 +804,6 @@ body.dark-mode .theme-toggle::before {
     gap: 8px;
     font-size: 0.8rem;
     color: var(--text-softer);
-}
-
-.dot::before {
-    content: "•";
-    margin: 0 4px;
 }
 
 /* Contact */
@@ -972,7 +970,7 @@ body.dark-mode .theme-toggle::before {
     color: var(--text-softer);
 }
 
-/* Animation utilities – FUTURISTIC SMOOTH */
+/* Animations */
 [data-animate] {
     opacity: 0;
     transform: translateY(18px);
@@ -1014,7 +1012,7 @@ body.dark-mode .theme-toggle::before {
     opacity: 1;
 }
 
-/* Parallax element */
+/* Parallax */
 [data-parallax] {
     will-change: transform;
     transition: transform 0.35s ease-out;
@@ -1027,7 +1025,7 @@ body.dark-mode .theme-toggle::before {
     100% { transform: translateY(0); }
 }
 
-/* Page-specific tweaks */
+/* Page-specific */
 .page-demos .hero {
     padding-bottom: 40px;
 }
@@ -1134,21 +1132,5 @@ body.dark-mode .theme-toggle::before {
     .contact-form {
         padding: 16px 16px;
         border-radius: 20px;
-
-        body.dark-mode {
-    --bg-body: #0f1115;
-    --bg-elevated: #1a1c21;
-    --bg-muted: #16181d;
-
-    --text-main: #ffffff;
-    --text-soft: #c9ccd4;
-    --text-softer: #a4a9b3;
-
-    --accent: #ffffff;
-    --accent-soft: #444;
-
-    --border-subtle: rgba(255, 255, 255, 0.12);
-}
-
     }
 }
