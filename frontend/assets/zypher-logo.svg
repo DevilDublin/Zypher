@@ -1,8 +1,6 @@
-<svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+<svg width="100" height="100" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
   <g fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Z shape split -->
     <path d="M30 40 H150 L30 140 H150" />
-    <!-- A shape integrated with the split path -->
     <path d="M60 140 L90 70 L120 140" />
     <path d="M78 110 H102" />
   </g>
