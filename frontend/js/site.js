@@ -85,4 +85,15 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     window.addEventListener("scroll", handleParallax);
     handleParallax();
+    /* THEME CYCLER */
+let themeIndex = 1;
+const themeToggle = document.getElementById("theme-toggle");
+
+if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+        themeIndex++;
+        if (themeIndex > 10) themeIndex = 1;
+        document.body.className = `theme-${themeIndex}`;
+    });
+}
 });
