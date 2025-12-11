@@ -1,45 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zypher AI — Contact</title>
-  <link rel="stylesheet" href="styles/main.css" />
-  <script defer src="js/site.js"></script>
+    <meta charset="UTF-8" />
+    <title>Zypher Agent – Contact</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Tell us what you'd like to automate and we'll propose a clear next step." />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script defer src="js/site.js"></script>
 </head>
 
-<body class="light">
+<body class="theme-1 page-contact">
 
-  <header class="navbar">
-    <div class="nav-left">
-      <img src="assets/zypher-logo.svg" class="logo" alt="Zypher Logo">
-      <span class="brand">Zypher AI</span>
+<header class="site-header">
+    <div class="container nav-container">
+
+        <a href="index.html" class="logo theme-toggle" id="theme-toggle">
+            <svg width="34" height="34" viewBox="0 0 100 100" class="logo-icon">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="8"/>
+                <path d="M30 50 L50 20 L70 50 L50 80 Z" fill="currentColor"/>
+            </svg>
+            <span class="logo-text">Zypher<span class="logo-accent">Agent</span></span>
+        </a>
+
+        <nav class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="demos.html">Demos</a>
+            <a href="index.html#use-cases">Use cases</a>
+            <a href="index.html#process">Process</a>
+            <a href="contact.html" class="is-active">Contact</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="demos.html" class="btn btn-ghost">View demos</a>
+            <button class="nav-toggle" id="nav-toggle"><span></span><span></span></button>
+        </div>
+
     </div>
+</header>
 
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="demos.html">Demos</a>
-      <a href="contact.html" class="active">Contact</a>
-    </nav>
+<main>
+    <section class="hero hero-slim">
+        <div class="container hero-grid hero-grid-slim">
+            <div class="hero-copy">
+                <p class="eyebrow">Work with Zypher Agent</p>
+                <h1>Share a bit about your situation.</h1>
+                <p class="hero-subtitle">
+                    No long briefs needed — just a few lines explaining where you're stuck and what “better” would look like.
+                </p>
+            </div>
 
-    <button id="themeToggle" class="theme-btn">◈</button>
-  </header>
+            <div class="hero-visual hero-visual-note">
+                <div class="note-card glow-soft">
+                    <p class="small-label">Prefer email?</p>
+                    <p>zypheragent25@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <main class="page-container">
-    <h1 class="page-title fade-up">Contact Us</h1>
+    <section class="section section-muted-top">
+        <div class="container contact-grid">
 
-    <form class="contact-form fade-up">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <textarea placeholder="Your Message" required></textarea>
-      <button class="cta" type="submit">Send Message</button>
-    </form>
+            <!-- NETLIFY FORM -->
+            <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                class="contact-form"
+            >
+                <input type="hidden" name="form-name" value="contact" />
+                <p style="display:none;"><label>Bot test<input name="bot-field" /></label></p>
 
-  </main>
+                <div class="form-row">
+                    <div class="form-field">
+                        <label>Name</label>
+                        <input name="name" required />
+                    </div>
 
-  <footer class="footer">
-    © 2025 Zypher AI — All rights reserved.
-  </footer>
+                    <div class="form-field">
+                        <label>Email</label>
+                        <input name="email" type="email" required />
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label>Company (optional)</label>
+                        <input name="company" />
+                    </div>
+
+                    <div class="form-field">
+                        <label>Website (optional)</label>
+                        <input name="website" type="url" placeholder="https://…" />
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label>What would you like to automate?</label>
+                    <textarea name="use-case" rows="4" required></textarea>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label>Budget range</label>
+                        <select name="budget">
+                            <option value="">Select</option>
+                            <option>Under £500</option>
+                            <option>£500–£1,500</option>
+                            <option>£1,500–£3,000</option>
+                            <option>£3,000+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-field">
+                        <label>Timeline</label>
+                        <select name="timeline">
+                            <option value="">Select</option>
+                            <option>ASAP</option>
+                            <option>1–3 months</option>
+                            <option>3+ months</option>
+                            <option>Just exploring</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row form-row-submit">
+                    <button class="btn btn-primary" type="submit">Send enquiry</button>
+                    <p class="form-footnote">We usually respond within one working day.</p>
+                </div>
+            </form>
+
+            <aside class="contact-aside">
+                <div class="contact-aside-card">
+                    <p class="small-label">What to expect</p>
+                    <ol class="aside-list">
+                        <li>We confirm if your case fits an AI agent or automation.</li>
+                        <li>You get 1–2 recommended options with likely costs.</li>
+                        <li>If it makes sense, we book a short call.</li>
+                    </ol>
+                </div>
+            </aside>
+
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <a class="logo footer-logo"><span class="logo-text">Zypher<span class="logo-accent">Agent</span></span></a>
+        <p class="footer-copy">If you're unsure whether an AI agent is the right fit, feel free to ask.</p>
+        <div class="footer-meta">&copy; <span id="year"></span> Zypher Agent</div>
+    </div>
+</footer>
 
 </body>
 </html>
