@@ -5,7 +5,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const yearSpan = document.getElementById("year");
     const themeToggle = document.getElementById("themeToggle");
 
-    /* Sticky header shadow */
+    /* ------------------------------
+       THEME LOADING / TOGGLE
+    ------------------------------ */
+    // Load saved theme
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+
+    // Toggle theme
+    if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+
+            if (document.body.classList.contains("dark-mode")) {
+                localStorage.setItem("theme", "dark");
+            } else {
+                localStorage.setItem("theme", "light");
+            }
+        });
+    }
+
+    /* ------------------------------
+       Sticky header shadow
+    ------------------------------ */
     const handleScrollHeader = () => {
         if (!header) return;
         if (window.scrollY > 4) {
@@ -17,7 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("scroll", handleScrollHeader);
     handleScrollHeader();
 
-    /* Mobile nav */
+    /* ------------------------------
+       Mobile nav
+    ------------------------------ */
     if (navToggle && navLinks) {
         navToggle.addEventListener("click", () => {
             navLinks.classList.toggle("is-open");
@@ -30,7 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    /* Smooth scroll */
+    /* ------------------------------
+       Smooth scroll
+    ------------------------------ */
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", (e) => {
             const targetId = anchor.getAttribute("href");
@@ -48,12 +75,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    /* Footer year */
+    /* ------------------------------
+       Footer year
+    ------------------------------ */
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
 
-    /* Scroll reveal animations */
+    /* ------------------------------
+       Scroll reveal animations
+    ------------------------------ */
     const animatedEls = document.querySelectorAll("[data-animate]");
     if (animatedEls.length) {
         const observer = new IntersectionObserver(
@@ -71,43 +102,31 @@ document.addEventListener("DOMContentLoaded", () => {
         animatedEls.forEach((el) => observer.observe(el));
     }
 
-    /* Parallax hero blocks */
+    /* ------------------------------
+       Parallax
+    ------------------------------ */
     const parallaxEls = document.querySelectorAll("[data-parallax]");
     const handleParallax = () => {
         if (!parallaxEls.length) return;
         const scrollY = window.scrollY;
         parallaxEls.forEach((el) => {
             const speed = 0.18;
-            const offset = (scrollY * speed);
+            const offset = scrollY * speed;
             el.style.transform = `translateY(${offset * -0.4}px)`;
         });
     };
     window.addEventListener("scroll", handleParallax);
     handleParallax();
 
-    /* Contact form message (Netlify-friendly) */
+    /* ------------------------------
+       Contact form (client-side)
+    ------------------------------ */
     const contactForm = document.getElementById("contact-form");
     if (contactForm) {
-        contactForm.addEventListener("submit", () => {
+        contactForm.addEventListener("submit", (e) => {
+            e.preventDefault();
             alert("Thanks for reaching out. We’ll review your message and respond shortly.");
-        });
-    }
-
-    /* THEME TOGGLE FIXED */
-    if (themeToggle) {
-        // Load saved theme
-        if (localStorage.getItem("theme") === "dark") {
-            document.body.classList.add("dark-mode");
-        }
-
-        themeToggle.addEventListener("click", () => {
-            document.body.classList.toggle("dark-mode");
-
-            if (document.body.classList.contains("dark-mode")) {
-                localStorage.setItem("theme", "dark");
-            } else {
-                localStorage.setItem("theme", "light");
-            }
+            contactForm.reset();
         });
     }
 });
