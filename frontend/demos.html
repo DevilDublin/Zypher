@@ -35,30 +35,30 @@
 </header>
 
 <main>
-    <section class="hero hero-slim">
+    <section class="hero hero-slim" data-animate="fade-up">
         <div class="container hero-grid hero-grid-slim">
             <div class="hero-copy">
                 <p class="eyebrow">Live demo gallery</p>
                 <h1>See the agents in action.</h1>
                 <p class="hero-subtitle">
-                    Short, unedited demos of real agents handling real scenarios – from appointment booking to
+                    Short demos of real agents handling real scenarios – from appointment booking to
                     lead qualification and follow-up.
                 </p>
             </div>
             <div class="hero-visual hero-visual-note">
-                <div class="note-card">
-                    <p class="small-label">How to use this page</p>
+                <div class="note-card glow-soft">
+                    <p class="small-label">Adding demos</p>
                     <ul>
-                        <li>Pick a demo type below to filter.</li>
-                        <li>Click a card to focus on that demo.</li>
-                        <li>Each card can embed audio/video when you’re ready.</li>
+                        <li>Upload audio or video files to your project.</li>
+                        <li>Drop them into the cards below as <code>&lt;audio&gt;</code> or <code>&lt;video&gt;</code>.</li>
+                        <li>Or embed Loom / call recordings via an <code>&lt;iframe&gt;</code>.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section section-muted-top">
+    <section class="section section-muted-top" data-animate="fade-up">
         <div class="container">
             <div class="demo-controls">
                 <div class="pill-group" id="demo-filters">
@@ -71,31 +71,32 @@
 
             <div class="demo-grid" id="demo-grid">
                 <!-- Demo 1 -->
-                <article class="demo-card is-active" data-type="voice">
+                <article class="demo-card is-active hover-lift" data-type="voice" data-animate="fade-up">
                     <header class="demo-card-header">
                         <span class="pill pill-soft">Voice • Real estate</span>
                         <h2>24/7 property viewing assistant</h2>
                     </header>
                     <p class="demo-description">
                         A voice agent that answers inbound calls, qualifies the caller, and books a viewing directly
-                        into the agent’s Google Calendar.
+                        into the agent’s calendar.
                     </p>
                     <div class="demo-media">
-                        <!-- Replace this block with your actual audio / iframe embeds -->
+                        <!-- Example: replace src with your audio file -->
+                        <!-- <audio controls src="assets/demos/real-estate-voice.mp3"></audio> -->
                         <div class="demo-placeholder">
                             <span class="play-icon">▶</span>
-                            <p>Audio demo coming soon – drop in your VAPI recording here.</p>
+                            <p>Drop an audio file or call recording here when you’re ready.</p>
                         </div>
                     </div>
                     <footer class="demo-meta">
-                        <span>Integrations: Google Calendar, Make.com</span>
-                        <span class="dot">•</span>
+                        <span>Integrations: Calendar, CRM</span>
+                        <span class="dot"></span>
                         <span>Avg call length: 2–3 mins</span>
                     </footer>
                 </article>
 
                 <!-- Demo 2 -->
-                <article class="demo-card" data-type="chat">
+                <article class="demo-card hover-lift" data-type="chat" data-animate="fade-up">
                     <header class="demo-card-header">
                         <span class="pill pill-soft">Chat • Services</span>
                         <h2>Website intake & qualification bot</h2>
@@ -104,20 +105,22 @@
                         A site widget that asks layered questions, scores leads, and hands only serious ones to your inbox or CRM.
                     </p>
                     <div class="demo-media">
+                        <!-- Example: embed your chat or Loom -->
+                        <!-- <iframe src="YOUR_LOOM_URL" allowfullscreen></iframe> -->
                         <div class="demo-placeholder">
                             <span class="play-icon">⌨</span>
-                            <p>Embed your chat widget or Loom walkthrough here.</p>
+                            <p>Embed your chat widget or a short Loom walkthrough here.</p>
                         </div>
                     </div>
                     <footer class="demo-meta">
                         <span>Channels: Web chat, WhatsApp</span>
-                        <span class="dot">•</span>
+                        <span class="dot"></span>
                         <span>Lead score pushed to CRM</span>
                     </footer>
                 </article>
 
                 <!-- Demo 3 -->
-                <article class="demo-card" data-type="automation">
+                <article class="demo-card hover-lift" data-type="automation" data-animate="fade-up">
                     <header class="demo-card-header">
                         <span class="pill pill-soft">Automation • Internal</span>
                         <h2>Meeting summary + follow-up engine</h2>
@@ -126,20 +129,21 @@
                         After each call, the agent summarises the conversation, updates the deal, and drafts a follow-up email.
                     </p>
                     <div class="demo-media">
+                        <!-- Example: screenshot of your automation flow -->
                         <div class="demo-placeholder">
                             <span class="play-icon">⚙</span>
-                            <p>Screenshot or loom of your Make.com / n8n flow can sit here.</p>
+                            <p>Screenshot or short video of your automation flow can sit here.</p>
                         </div>
                     </div>
                     <footer class="demo-meta">
                         <span>Outputs: CRM notes, email draft, Slack ping</span>
-                        <span class="dot">•</span>
+                        <span class="dot"></span>
                         <span>Avg setup: 3–5 days</span>
                     </footer>
                 </article>
 
                 <!-- Demo 4 -->
-                <article class="demo-card" data-type="voice">
+                <article class="demo-card hover-lift" data-type="voice" data-animate="fade-up">
                     <header class="demo-card-header">
                         <span class="pill pill-soft">Voice • Service business</span>
                         <h2>Missed-call rescue agent</h2>
@@ -148,14 +152,15 @@
                         When you miss a call, the agent rings back, apologises, captures the details, and books the next step.
                     </p>
                     <div class="demo-media">
+                        <!-- Example: another audio or video -->
                         <div class="demo-placeholder">
                             <span class="play-icon">▶</span>
-                            <p>Second audio / call log embed goes here.</p>
+                            <p>Second audio / call demo can live here.</p>
                         </div>
                     </div>
                     <footer class="demo-meta">
-                        <span>Works with: Twilio, VAPI</span>
-                        <span class="dot">•</span>
+                        <span>Works with: telephony providers, APIs</span>
+                        <span class="dot"></span>
                         <span>Ideal for solo founders</span>
                     </footer>
                 </article>
@@ -165,7 +170,7 @@
 </main>
 
 <footer class="site-footer">
-    <div class="container footer-grid">
+    <div class="container footer-grid" data-animate="fade-up">
         <div class="footer-main">
             <div class="logo footer-logo">
                 <span class="logo-mark"></span>
