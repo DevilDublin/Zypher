@@ -1,153 +1,257 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Zypher Agents — System Activation</title>
-  <link rel="stylesheet" href="./styles/main.css" />
+    <meta charset="UTF-8" />
+    <title>Zypher AI – Automated agents, human results</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Zypher AI builds bespoke AI agents and automations that quietly run your business in the background." />
+    <link rel="stylesheet" href="styles/main.css" />
+    <script defer src="js/site.js"></script>
 </head>
-<body>
-  <header class="site-bg" aria-hidden="true"></header>
-
-  <!-- ===== INTRO (plays once; add ?intro=1 to preview again) ===== -->
-  <div id="zypher-intro" aria-label="Zypher system activation">
-    <div class="intro-wrap">
-      <div class="logo-box no-select">
-        <!-- inline so strokes animate; geometry matches hero asset -->
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 220" aria-hidden="true">
-          <!-- Z -->
-          <path class="stroke" pathLength="1" d="M40 40 H180 L40 180 H180" />
-          <!-- Y -->
-          <path class="stroke" pathLength="1" d="M240 40 L310 110" />
-          <path class="stroke" pathLength="1" d="M380 40 L310 110 V180" />
-          <!-- P -->
-          <path class="stroke" pathLength="1" d="M440 40 V180" />
-          <path class="stroke" pathLength="1" d="M440 40 H560 A40 40 0 0 1 560 120 H440" />
-          <!-- H -->
-          <path class="stroke" pathLength="1" d="M640 40 V180" />
-          <path class="stroke" pathLength="1" d="M760 40 V180" />
-          <path class="stroke" pathLength="1" d="M640 110 H760" />
-          <!-- E -->
-          <path class="stroke" pathLength="1" d="M840 40 H960" />
-          <path class="stroke" pathLength="1" d="M840 110 H930" />
-          <path class="stroke" pathLength="1" d="M840 180 H960" />
-          <path class="stroke" pathLength="1" d="M840 40 V180" />
-          <!-- R -->
-          <path class="stroke" pathLength="1" d="M1040 40 V180" />
-          <path class="stroke" pathLength="1" d="M1040 40 H1160 A40 40 0 0 1 1160 120 H1040" />
-          <path class="stroke" pathLength="1" d="M1100 120 L1170 180" />
-        </svg>
-      </div>
-      <div class="status" aria-live="polite">
-        <div class="line show-1">INITIALIZING TERMINAL RUNTIME…</div>
-        <div class="line show-2">MOUNTING INTELLIGENCE CORES…</div>
-        <div class="line show-3">HANDSHAKE: CORE NETWORK…</div>
-        <div class="line show-4"><b>ZYPHER ONLINE.</b></div>
-        <div class="line show-5">WELCOME.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== HOME ===== -->
-  <main id="main" class="hero">
-    <div class="hero-inner">
-      <div class="logo-halo" aria-hidden="true"></div>
-
-      <!-- same asset + width as intro for perfect imprint -->
-      <div class="logo-box no-select">
-        <img src="./js/assets/zypher-logo.svg" alt="ZYPHER" draggable="false" aria-hidden="true" />
-      </div>
-
-      <p class="tagline">Automation. Intelligence. Precision.</p>
-
-      <nav class="pills" aria-label="Capabilities">
-        <span class="pill">Make.com + Vapi Ready</span>
-        <span class="pill">Bookings &amp; Calendars</span>
-        <span class="pill">Audit Logs &amp; Handoffs</span>
-      </nav>
-
-      <!-- Hidden-colour cards: hover tints logo/halo/background via --accent -->
-      <section class="cta-grid" aria-label="Primary sections">
-        <a class="card" href="./demos.html"
-           data-accent="#8b5cf6" data-accent-name="violet">
-          <span class="chip" aria-hidden="true"></span>
-          <h3>AI Demos</h3>
-          <p>Try live assistants and flows.</p>
+<body class="page-home">
+<header class="site-header">
+    <div class="container nav-container">
+        <a href="index.html" class="logo">
+            <span class="logo-mark"></span>
+            <span class="logo-text">Zypher<span class="logo-accent">AI</span></span>
         </a>
 
-        <a class="card" href="#voice"
-           data-accent="#7ad3f2" data-accent-name="cyan">
-          <span class="chip" aria-hidden="true"></span>
-          <h3>Voice Agents</h3>
-          <p>Vapi-powered phone agents.</p>
-        </a>
+        <nav class="nav-links" id="nav-links">
+            <a href="#hero">Home</a>
+            <a href="demos.html">Demos</a>
+            <a href="#use-cases">Use cases</a>
+            <a href="#process">Process</a>
+            <a href="contact.html">Contact</a>
+        </nav>
 
-        <a class="card" href="#workflows"
-           data-accent="#8fff58" data-accent-name="neon">
-          <span class="chip" aria-hidden="true"></span>
-          <h3>Automation Workflows</h3>
-          <p>Prebuilt, outcome-driven automations.</p>
-        </a>
-
-        <a class="card" href="./contact.html"
-           data-accent="#ffd166" data-accent-name="amber">
-          <span class="chip" aria-hidden="true"></span>
-          <h3>Contact</h3>
-          <p>Book a demo or message us.</p>
-        </a>
-      </section>
+        <div class="nav-actions">
+            <a href="demos.html" class="btn btn-ghost">View demos</a>
+            <a href="contact.html" class="btn btn-primary">Book a call</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span>
+            </button>
+        </div>
     </div>
-  </main>
+</header>
 
-  <footer class="site-footer"><p>© 2025 Zypher Agents. All rights reserved.</p></footer>
+<main>
+    <!-- Hero -->
+    <section id="hero" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-copy">
+                <p class="eyebrow">Boutique AI agency • London</p>
+                <h1>AI agents that work while you sleep.</h1>
+                <p class="hero-subtitle">
+                    We design, build, and deploy bespoke AI agents that answer, qualify, and book clients –
+                    wired directly into your existing tools.
+                </p>
 
-  <!-- ===== IN-PAGE MODALS (no extra HTML files) ===== -->
-  <section id="voice" class="modal" aria-labelledby="voice-title" aria-modal="true" role="dialog">
-    <div class="modal-panel">
-      <a class="modal-close" href="#" aria-label="Close">✕</a>
-      <h2 id="voice-title">Voice Agents</h2>
-      <p class="lead">Vapi-powered phone agents with Make.com handoffs, calendar booking, and conversation logging.</p>
-      <div class="grid-2">
-        <div class="panel">
-          <h3>Live Demo</h3>
-          <div class="placeholder">Embed your Vapi widget here</div>
+                <div class="hero-cta-row">
+                    <a href="contact.html" class="btn btn-primary">Schedule a discovery call</a>
+                    <a href="demos.html" class="btn btn-ghost hero-secondary">Watch the live demos</a>
+                </div>
+
+                <div class="hero-metadata">
+                    <div>
+                        <span class="meta-label">Response time</span>
+                        <span class="meta-value">~300ms</span>
+                    </div>
+                    <div>
+                        <span class="meta-label">Channels</span>
+                        <span class="meta-value">Web · Voice · SMS</span>
+                    </div>
+                    <div>
+                        <span class="meta-label">Built on</span>
+                        <span class="meta-value">OpenAI · VAPI · Make</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hero-card-header">
+                        <span class="pill pill-soft">Real estate voice agent</span>
+                        <span class="status-dot">Live</span>
+                    </div>
+                    <div class="hero-card-body">
+                        <div class="hero-stream">
+                            <div class="stream-row stream-row-user">
+                                <span class="stream-avatar">C</span>
+                                <p>“Can you book a viewing for this Saturday after 4pm?”</p>
+                            </div>
+                            <div class="stream-row stream-row-agent">
+                                <span class="stream-avatar stream-avatar-agent">Z</span>
+                                <p>
+                                    “Absolutely. I’ve checked your calendar and the agent’s availability.
+                                    You’re confirmed for <strong>4:30pm</strong>. I’ve just emailed the details.”
+                                </p>
+                            </div>
+                            <div class="stream-row stream-row-agent faint">
+                                <span class="stream-avatar stream-avatar-agent">Z</span>
+                                <p>Webhook → Google Calendar · Follow-up SMS queued</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-card-footer">
+                        <span class="pill pill-outline">End-to-end automation</span>
+                        <span class="pill pill-outline">Human handoff built-in</span>
+                    </div>
+                </div>
+                <div class="hero-stats-card">
+                    <p class="small-label">What we typically unlock</p>
+                    <div class="hero-stats-grid">
+                        <div>
+                            <span class="stat-number">4–7x</span>
+                            <span class="stat-label">More qualified convos</span>
+                        </div>
+                        <div>
+                            <span class="stat-number">70%</span>
+                            <span class="stat-label">Calls handled by AI</span>
+                        </div>
+                        <div>
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Lead coverage</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="panel">
-          <h3>Features</h3>
-          <ul>
-            <li>Natural conversations with guardrails</li>
-            <li>Bookings → Google Calendar</li>
-            <li>Audit logs &amp; transcripts</li>
-            <li>Escalations &amp; handoffs</li>
-          </ul>
+    </section>
+
+    <!-- Trust strip -->
+    <section class="trust-strip">
+        <div class="container trust-grid">
+            <p class="trust-label">Plug into your existing stack</p>
+            <div class="trust-icons">
+                <span>Google Calendar</span>
+                <span>HubSpot</span>
+                <span>Notion</span>
+                <span>Slack</span>
+                <span>Zapier / Make</span>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <!-- Use cases -->
+    <section id="use-cases" class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Where Zypher quietly takes over.</h2>
+                <p>
+                    We specialise in high-intent, time-sensitive flows where a missed message equals a missed sale.
+                </p>
+            </div>
+
+            <div class="cards-grid cards-grid-3">
+                <article class="card">
+                    <h3>Lead capture & qualification</h3>
+                    <p>
+                        AI agents that greet visitors, ask smart questions, score their intent, and push only real
+                        opportunities to your team.
+                    </p>
+                    <ul class="card-list">
+                        <li>Website chat and WhatsApp entry points</li>
+                        <li>Dynamic question trees based on answers</li>
+                        <li>Piped straight into your CRM</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>Appointment setting & routing</h3>
+                    <p>
+                        Voice and chat agents that negotiate time, check availability, and send calendar invites on your behalf.
+                    </p>
+                    <ul class="card-list">
+                        <li>Two-way calendar sync</li>
+                        <li>Reschedule & cancellation flows</li>
+                        <li>Team routing by skill or location</li>
+                    </ul>
+                </article>
+
+                <article class="card">
+                    <h3>Operational automations</h3>
+                    <p>
+                        Behind-the-scenes flows that update records, send follow-ups, and keep everyone in the loop.
+                    </p>
+                    <ul class="card-list">
+                        <li>Post-call summaries to Slack/Email</li>
+                        <li>Pipeline updates after key events</li>
+                        <li>Error alerts if anything fails</li>
+                    </ul>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="section section-muted">
+        <div class="container">
+            <div class="section-header">
+                <h2>A simple, opinionated build process.</h2>
+                <p>
+                    No endless strategy calls. We keep things tight, technical, and focused on going live.
+                </p>
+            </div>
+
+            <ol class="process-steps">
+                <li class="process-step">
+                    <span class="step-number">01</span>
+                    <div>
+                        <h3>Discovery & call flows</h3>
+                        <p>
+                            We map your existing scripts, tools, and edge-cases into clear call/chat flows with human handoff rules.
+                        </p>
+                    </div>
+                </li>
+                <li class="process-step">
+                    <span class="step-number">02</span>
+                    <div>
+                        <h3>Prototype & test sandbox</h3>
+                        <p>
+                            You get a private demo environment to test the agent live before we wire it into production systems.
+                        </p>
+                    </div>
+                </li>
+                <li class="process-step">
+                    <span class="step-number">03</span>
+                    <div>
+                        <h3>Integration & go-live</h3>
+                        <p>
+                            We connect to your calendar, CRM, or internal tools and monitor performance during the first weeks.
+                        </p>
+                    </div>
+                </li>
+            </ol>
+
+            <div class="process-cta">
+                <p>Ready to see what this could look like for your business?</p>
+                <a href="contact.html" class="btn btn-primary">Tell us about your use case</a>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    <div class="container footer-grid">
+        <div class="footer-main">
+            <div class="logo footer-logo">
+                <span class="logo-mark"></span>
+                <span class="logo-text">Zypher<span class="logo-accent">AI</span></span>
+            </div>
+            <p class="footer-copy">
+                Bespoke AI agents and automations, designed and built in London.
+            </p>
+        </div>
+        <div class="footer-links">
+            <a href="demos.html">Demos</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-meta">
+            <span>&copy; <span id="year"></span> Zypher AI</span>
+            <span class="dot">•</span>
+            <span>Quietly running in the background.</span>
+        </div>
     </div>
-  </section>
-
-  <section id="workflows" class="modal" aria-labelledby="workflows-title" aria-modal="true" role="dialog">
-    <div class="modal-panel">
-      <a class="modal-close" href="#" aria-label="Close">✕</a>
-      <h2 id="workflows-title">Automation Workflows</h2>
-      <p class="lead">Professional, prebuilt workflows that trigger from chat/voice and complete tasks end-to-end.</p>
-      <div class="grid-2">
-        <div class="panel">
-          <h3>Popular Workflows</h3>
-          <ul>
-            <li>Lead Capture → CRM → Auto-Follow-Up</li>
-            <li>Appointment Setter → Calendar + Reminders</li>
-            <li>Order Status → Live System Lookup</li>
-            <li>Ticket Triage → Slack / Email Handoff</li>
-          </ul>
-        </div>
-        <div class="panel">
-          <h3>Integrations</h3>
-          <p>Make.com, Google Workspace, HubSpot, Notion, Slack, Webhooks, sheets &amp; databases.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <script src="./js/site.js" defer></script>
+</footer>
 </body>
 </html>
