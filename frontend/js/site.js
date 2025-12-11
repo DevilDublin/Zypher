@@ -79,20 +79,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const scrollY = window.scrollY;
         parallaxEls.forEach((el) => {
             const speed = 0.18; // subtle
-            const offset = (scrollY * speed);
+            const offset = scrollY * speed;
             el.style.transform = `translateY(${offset * -0.4}px)`;
         });
     };
     window.addEventListener("scroll", handleParallax);
     handleParallax();
-
-    /* Contact form – front-end only */
-    const contactForm = document.getElementById("contact-form");
-    if (contactForm) {
-        contactForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            alert("Thanks for reaching out. We’ll review your message and respond shortly.");
-            contactForm.reset();
-        });
-    }
 });
