@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 card.style.display = matches ? "block" : "none";
             });
 
-            // After filter change, scroll to top of grid on small screens
             const grid = document.getElementById("demo-grid");
             if (grid && window.innerWidth < 900) {
                 const top = grid.getBoundingClientRect().top + window.scrollY - 90;
