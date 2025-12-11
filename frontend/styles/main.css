@@ -443,6 +443,28 @@ body.dark-mode .hero-card {
 body.dark-mode .hero-card-body {
     background: radial-gradient(circle at top, #020617, #020617 50%, #020617);
 }
+/* DARK MODE FIX — pill filter visibility */
+body.dark-mode .pill-filter {
+    color: #e5e7eb;                 /* readable soft white text */
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.18);
+}
+
+body.dark-mode .pill-filter:hover {
+    background: rgba(255,255,255,0.12);
+}
+
+body.dark-mode .pill-filter.is-active {
+    background: #22c55e;            /* mint accent */
+    border-color: #22c55e;
+    color: #052e16;                 /* deep green readable text */
+}
+
+/* Fix label colours inside demo card headers */
+body.dark-mode .demo-card-header h2,
+body.dark-mode .demo-description {
+    color: #e5e7eb;
+}
 
 .hero-stream {
     position: relative;
