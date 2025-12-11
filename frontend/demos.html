@@ -14,10 +14,12 @@
     <div class="container nav-container">
 
         <div class="nav-left">
+            <!-- FIXED: theme toggle FIRST -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"></button>
+
             <a href="index.html" class="logo">
                 <span class="logo-text">Zypher<span class="logo-accent">Agent</span></span>
             </a>
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"></button>
         </div>
 
         <nav class="nav-links" id="nav-links">
@@ -30,7 +32,9 @@
 
         <div class="nav-actions">
             <a href="contact.html" class="btn btn-primary">Book a call</a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"><span></span><span></span></button>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span>
+            </button>
         </div>
     </div>
 </header>
@@ -76,7 +80,7 @@
 
             <div class="demo-grid" id="demo-grid">
 
-                <!-- Demo 1: NO AUDIO PLAYER ANYMORE -->
+                <!-- Demo 1 -->
                 <article class="demo-card is-active hover-lift" data-type="voice" data-animate="fade-up">
                     <header class="demo-card-header">
                         <span class="pill pill-soft">Voice agent</span>
