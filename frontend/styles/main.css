@@ -176,6 +176,11 @@ button {
     align-items: center;
     gap: 10px;
 }
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* spacing between logo + icon */
+}
 
 /* Buttons */
 .btn {
