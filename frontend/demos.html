@@ -1,224 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Zypher Agent – AI agent demos</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Explore demos of Zypher Agent’s AI voice, chat and automation flows." />
-    <link rel="stylesheet" href="styles/main.css" />
-    <script defer src="js/site.js"></script>
-    <script defer src="js/demos.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zypher AI — Demos</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <script defer src="js/site.js"></script>
 </head>
 
-<body class="theme-1 page-demos">
-<header class="site-header">
-    <div class="container nav-container">
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="js/assets/zypher-logo.svg" alt="Zypher Logo" />
+      <span>Zypher AI</span>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="demos.html" class="active">Demos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button id="themeToggle" class="theme-btn">◈</button>
+  </header>
 
-        <a href="index.html" class="logo theme-toggle" id="theme-toggle">
-            <svg width="34" height="34" viewBox="0 0 100 100" class="logo-icon">
-                <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="8"/>
-                <path d="M30 50 L50 20 L70 50 L50 80 Z" fill="currentColor"/>
-            </svg>
-            <span class="logo-text">Zypher<span class="logo-accent">Agent</span></span>
-        </a>
+  <main class="demos-container">
+    <h1>Live AI Demonstrations</h1>
 
-        <nav class="nav-links" id="nav-links">
-            <a href="index.html">Home</a>
-            <a class="is-active" href="demos.html">Demos</a>
-            <a href="index.html#use-cases">Use cases</a>
-            <a href="index.html#process">Process</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <div class="demo-grid">
 
-        <div class="nav-actions">
-            <a href="contact.html" class="btn btn-primary">Book a call</a>
-            <button class="nav-toggle" id="nav-toggle"><span></span><span></span></button>
-        </div>
+      <!-- Demo 1 -->
+      <div class="demo-card">
+        <h2>Lead Qualification AI</h2>
+        <div class="demo-visual"></div>
+        <p>Real-time conversation flow with built-in intent detection.</p>
+      </div>
+
+      <!-- Demo 2 -->
+      <div class="demo-card">
+        <h2>Appointment Scheduler</h2>
+        <div class="demo-visual"></div>
+        <p>Calendar automation, conflict prevention, and reminders.</p>
+      </div>
+
+      <!-- Demo 3 -->
+      <div class="demo-card">
+        <h2>Voice AI (Coming Soon)</h2>
+        <div class="demo-visual"></div>
+        <p>Our voice demo is launching soon with Twilio + Vapi.</p>
+      </div>
 
     </div>
-</header>
+  </main>
 
-<main>
-    <section class="hero hero-slim">
-        <div class="container hero-grid hero-grid-slim">
-            <div class="hero-copy">
-                <p class="eyebrow">Demo library</p>
-                <h1>What an AI agent actually feels like.</h1>
-                <p class="hero-subtitle">
-                    These scenarios give a sense of tone, clarity and structure. Every deployed agent is customised for a specific business.
-                </p>
-            </div>
-
-            <div class="hero-visual hero-visual-note">
-                <div class="note-card glow-soft">
-                    <p class="small-label">Recordings</p>
-                    <p>We’ll add the real voice recordings once your Twilio pipeline is live.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-muted-top">
-        <div class="container">
-
-            <div class="pill-group" id="demo-filters">
-                <button class="pill pill-filter is-active" data-filter="all">All</button>
-                <button class="pill pill-filter" data-filter="voice">Voice agents</button>
-                <button class="pill pill-filter" data-filter="chat">Chat agents</button>
-                <button class="pill pill-filter" data-filter="automation">Automations</button>
-            </div>
-
-            <div class="demo-grid" id="demo-grid">
-
-                <!-- UPDATED DEMO 1 -->
-                <article class="demo-card is-active hover-lift" data-type="voice">
-                    <header class="demo-card-header">
-                        <span class="pill pill-soft">Voice agent</span>
-                        <h2>Universal inbound booking and triage</h2>
-                    </header>
-
-                    <p class="demo-description">
-                        A sector-agnostic agent that answers inbound calls, understands intent and either books a time or routes the caller appropriately.
-                    </p>
-
-                    <div class="demo-media">
-                        <div class="demo-placeholder">
-                            <span class="play-icon">📞</span>
-                            <p>
-                                Example conversation:<br><br>
-                                <strong>Caller:</strong> “Hi, I’d like to check availability for this week.”<br>
-                                <strong>Agent:</strong> “Certainly. Are you looking to book a consultation or follow up on something?”<br>
-                                <strong>Caller:</strong> “A consultation.”<br>
-                                <strong>Agent:</strong> “We have Thursday at 4pm or Friday at 11:30am. What suits you?”<br>
-                                <strong>Caller:</strong> “Thursday, please.”<br>
-                                <strong>Agent:</strong> “All set — you’ll receive a confirmation shortly.”
-                            </p>
-                        </div>
-                    </div>
-
-                    <footer class="demo-meta">
-                        <span>Useful for: consultants, agencies, service providers</span>
-                        <span class="dot"></span>
-                        <span>Outcome: booked slots, fewer missed calls</span>
-                    </footer>
-
-                    <div class="demo-coming-soon"><em>🎧 Voice demo coming soon</em></div>
-                </article>
-
-                <!-- Demo 2 -->
-                <article class="demo-card hover-lift" data-type="chat">
-                    <header class="demo-card-header">
-                        <span class="pill pill-soft">Chat assistant</span>
-                        <h2>Website intake and qualification assistant</h2>
-                    </header>
-                    <p class="demo-description">
-                        A conversational assistant that gathers context, checks fit and passes structured summaries to your team.
-                    </p>
-                    <div class="demo-media">
-                        <div class="demo-placeholder">
-                            <span class="play-icon">⌨</span>
-                            <p>
-                                Example conversation:<br><br>
-                                <strong>Visitor:</strong> “We’re exploring automation.”<br>
-                                <strong>Assistant:</strong> “Happy to help. Roughly how many clients do you onboard monthly?”<br>
-                                <strong>Visitor:</strong> “20–30.”<br>
-                                <strong>Assistant:</strong> “Understood. Are you looking to automate scheduling, document collection, or both?”
-                            </p>
-                        </div>
-                    </div>
-                    <footer class="demo-meta">
-                        <span>Channels: web widget, WhatsApp, SMS</span>
-                        <span class="dot"></span>
-                        <span>Outcome: fewer form fills, more conversations</span>
-                    </footer>
-                </article>
-
-                <!-- Demo 3 -->
-                <article class="demo-card hover-lift" data-type="voice">
-                    <header class="demo-card-header">
-                        <span class="pill pill-soft">Voice agent</span>
-                        <h2>Missed-call rescue and call-back agent</h2>
-                    </header>
-                    <p class="demo-description">
-                        When a call is missed, the agent automatically calls back and secures the next step.
-                    </p>
-                    <div class="demo-media">
-                        <div class="demo-placeholder">
-                            <span class="play-icon">▶</span>
-                            <p>
-                                <strong>Agent:</strong> “Sorry we missed your call — I can help now.”<br>
-                                <strong>Caller:</strong> “I’d like to book for tomorrow.”<br>
-                                <strong>Agent:</strong> “Available slots: 2pm or 4pm.”
-                            </p>
-                        </div>
-                    </div>
-                    <footer class="demo-meta">
-                        <span>Useful for: solo founders, lean teams</span>
-                        <span class="dot"></span>
-                        <span>Outcome: fewer lost opportunities</span>
-                    </footer>
-                </article>
-
-                <!-- Demo 4 -->
-                <article class="demo-card hover-lift" data-type="automation">
-                    <header class="demo-card-header">
-                        <span class="pill pill-soft">Automation flow</span>
-                        <h2>Post-call summary and follow-up</h2>
-                    </header>
-                    <p class="demo-description">
-                        After a call, an automation drafts a summary, updates CRM records and sends a follow-up.
-                    </p>
-                    <div class="demo-media">
-                        <div class="demo-placeholder">
-                            <span class="play-icon">⚙</span>
-                            <p>
-                                Summary, CRM update and a draft follow-up email generated automatically.
-                            </p>
-                        </div>
-                    </div>
-                    <footer class="demo-meta">
-                        <span>Integrations: calendar, CRM, email</span>
-                        <span class="dot"></span>
-                        <span>Outcome: zero admin</span>
-                    </footer>
-                </article>
-
-                <!-- Demo 5 -->
-                <article class="demo-card hover-lift" data-type="chat">
-                    <header class="demo-card-header">
-                        <span class="pill pill-soft">Internal assistant</span>
-                        <h2>“Ask me anything” operations agent</h2>
-                    </header>
-                    <p class="demo-description">
-                        An internal knowledge assistant that answers questions based on your documentation.
-                    </p>
-                    <div class="demo-media">
-                        <div class="demo-placeholder">
-                            <span class="play-icon">⌨</span>
-                            <p>
-                                <strong>Team:</strong> “What’s our onboarding process?”<br>
-                                <strong>Assistant:</strong> “Five steps. Want the full checklist?”
-                            </p>
-                        </div>
-                    </div>
-                    <footer class="demo-meta">
-                        <span>Useful for: operations, onboarding</span>
-                        <span class="dot"></span>
-                        <span>Outcome: fewer internal questions</span>
-                    </footer>
-                </article>
-
-            </div>
-        </div>
-    </section>
-</main>
-
-<footer class="site-footer">
-    <div class="container footer-grid">
-        <a class="logo footer-logo"><span class="logo-text">Zypher<span class="logo-accent">Agent</span></span></a>
-        <p class="footer-copy">Custom AI agents tailored to your tools and tone.</p>
-        <div class="footer-meta">&copy; <span id="year"></span> Zypher Agent</div>
-    </div>
-</footer>
+  <footer class="footer">
+    <p>© 2025 Zypher AI — All rights reserved.</p>
+  </footer>
 </body>
 </html>
