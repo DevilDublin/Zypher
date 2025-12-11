@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Zypher AI – Contact</title>
+    <title>Zypher Agent – Contact</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Tell Zypher AI about your use case and we’ll design an agent around your business." />
+    <meta name="description" content="Tell Zypher Agent what you’d like to automate and we’ll propose a sensible way forward." />
     <link rel="stylesheet" href="styles/main.css" />
     <script defer src="js/site.js"></script>
 </head>
@@ -13,7 +13,7 @@
     <div class="container nav-container">
         <a href="index.html" class="logo">
             <span class="logo-mark"></span>
-            <span class="logo-text">Zypher<span class="logo-accent">AI</span></span>
+            <span class="logo-text">Zypher<span class="logo-accent">Agent</span></span>
         </a>
 
         <nav class="nav-links" id="nav-links">
@@ -37,19 +37,18 @@
     <section class="hero hero-slim" data-animate="fade-up">
         <div class="container hero-grid hero-grid-slim">
             <div class="hero-copy">
-                <p class="eyebrow">Work with Zypher</p>
-                <h1>Tell us what you’d like to automate.</h1>
+                <p class="eyebrow">Work with Zypher Agent</p>
+                <h1>Share a bit about your situation.</h1>
                 <p class="hero-subtitle">
-                    A short form, a quick loom, or a simple message is enough.
-                    We’ll come back with what we’d build, how long it’ll take, and an estimated range.
+                    You do not need a long brief. A few lines on where you’re stuck and what “good” would look like is enough for us to respond with a clear next step.
                 </p>
             </div>
             <div class="hero-visual hero-visual-note">
                 <div class="note-card glow-soft">
                     <p class="small-label">Prefer email?</p>
                     <p>
-                        Reach out directly at<br />
-                        <strong>hello@zypher.ai</strong> (placeholder – swap for your real inbox).
+                        You can also reach us at<br />
+                        <strong>zypheragent25@gmail.com</strong>.
                     </p>
                 </div>
             </div>
@@ -58,7 +57,26 @@
 
     <section class="section section-muted-top" data-animate="fade-up">
         <div class="container contact-grid">
-            <form class="contact-form" id="contact-form">
+            <!-- Netlify form -->
+            <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                class="contact-form"
+                id="contact-form"
+            >
+                <!-- Hidden field for Netlify -->
+                <input type="hidden" name="form-name" value="contact" />
+
+                <!-- Honeypot field -->
+                <p style="display:none;">
+                    <label>
+                        Don’t fill this in if you’re human:
+                        <input name="bot-field" />
+                    </label>
+                </p>
+
                 <div class="form-row">
                     <div class="form-field">
                         <label for="name">Name</label>
@@ -83,8 +101,8 @@
 
                 <div class="form-row">
                     <div class="form-field">
-                        <label for="use-case">What would you like to automate?</label>
-                        <textarea id="use-case" name="use-case" rows="4" placeholder="A quick overview is perfect." required></textarea>
+                        <label for="use-case">What would you like to automate or improve?</label>
+                        <textarea id="use-case" name="use-case" rows="4" placeholder="A quick overview is perfect – where you are now and what ‘better’ would feel like." required></textarea>
                     </div>
                 </div>
 
@@ -103,33 +121,33 @@
                         <label for="timeline">Ideal go-live timeline</label>
                         <select id="timeline" name="timeline">
                             <option value="">Select a timeline</option>
-                            <option value="asap">ASAP / this month</option>
-                            <option value="1-3-months">1–3 months</option>
+                            <option value="asap">As soon as reasonably possible</option>
+                            <option value="1-3-months">Within 1–3 months</option>
                             <option value="3-plus">3+ months</option>
-                            <option value="exploring">Just exploring options</option>
+                            <option value="exploring">Just exploring options for now</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-row form-row-submit">
                     <button type="submit" class="btn btn-primary">Send enquiry</button>
-                    <p class="form-footnote">No spam. No newsletter. Just a straightforward reply.</p>
+                    <p class="form-footnote">We usually reply within one working day.</p>
                 </div>
             </form>
 
             <aside class="contact-aside">
                 <div class="contact-aside-card">
-                    <p class="small-label">What happens next</p>
+                    <p class="small-label">What to expect</p>
                     <ol class="aside-list">
-                        <li>We quickly sanity-check that your use case is a good fit for agents.</li>
-                        <li>We’ll reply with 2–3 ways we’d approach it and a rough range.</li>
-                        <li>If it makes sense, we book a short call and start mapping flows.</li>
+                        <li>We’ll confirm if your use case is a strong fit for an AI agent or an automation flow.</li>
+                        <li>You’ll receive 1–2 practical options, with likely timelines and a rough investment range.</li>
+                        <li>If it sounds sensible, we book a short call and start mapping actual journeys together.</li>
                     </ol>
                 </div>
 
                 <div class="contact-aside-card subtle">
-                    <p class="small-label">Based in</p>
-                    <p>London, working with clients across the UK, EU and beyond.</p>
+                    <p class="small-label">Where we work</p>
+                    <p>We’re based in London and work with clients across the UK, Europe and further afield.</p>
                 </div>
             </aside>
         </div>
@@ -141,10 +159,10 @@
         <div class="footer-main">
             <div class="logo footer-logo">
                 <span class="logo-mark"></span>
-                <span class="logo-text">Zypher<span class="logo-accent">AI</span></span>
+                <span class="logo-text">Zypher<span class="logo-accent">Agent</span></span>
             </div>
             <p class="footer-copy">
-                We build small, sharp systems that quietly change how your business runs.
+                If you’re not sure whether an AI agent is the right tool, feel free to ask. We’re always happy to say “no” when it doesn’t make sense.
             </p>
         </div>
         <div class="footer-links">
@@ -152,7 +170,7 @@
             <a href="demos.html">Demos</a>
         </div>
         <div class="footer-meta">
-            <span>&copy; <span id="year"></span> Zypher AI</span>
+            <span>&copy; <span id="year"></span> Zypher Agent</span>
         </div>
     </div>
 </footer>
