@@ -8,34 +8,38 @@
   <script defer src="js/site.js"></script>
 </head>
 
-<body>
+<body class="light">
+
   <header class="navbar">
-    <div class="logo">
-      <img src="js/assets/zypher-logo.svg" alt="Zypher Logo" />
-      <span>Zypher AI</span>
+    <div class="nav-left">
+      <img src="assets/zypher-logo.svg" class="logo" alt="Zypher Logo">
+      <span class="brand">Zypher AI</span>
     </div>
-    <nav>
+
+    <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="demos.html">Demos</a>
       <a href="contact.html" class="active">Contact</a>
     </nav>
+
     <button id="themeToggle" class="theme-btn">◈</button>
   </header>
 
-  <main class="contact-container">
-    <h1>Contact Us</h1>
-    <p>Let’s build your custom AI solution.</p>
+  <main class="page-container">
+    <h1 class="page-title fade-up">Contact Us</h1>
 
-    <form class="contact-form">
+    <form class="contact-form fade-up">
       <input type="text" placeholder="Your Name" required />
       <input type="email" placeholder="Email Address" required />
       <textarea placeholder="Your Message" required></textarea>
-      <button type="submit" class="cta">Send Message</button>
+      <button class="cta" type="submit">Send Message</button>
     </form>
+
   </main>
 
   <footer class="footer">
-    <p>© 2025 Zypher AI — All rights reserved.</p>
+    © 2025 Zypher AI — All rights reserved.
   </footer>
+
 </body>
 </html>
