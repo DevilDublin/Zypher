@@ -4,15 +4,20 @@
     <meta charset="UTF-8" />
     <title>Zypher Agent – AI agents that quietly run your business</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Zypher Agent designs and deploys bespoke AI agents that handle enquiries, bookings and follow-up – wired into your existing tools." />
+    <meta name="description" content="Zypher Agent builds bespoke AI agents that handle enquiries, bookings and follow-ups for modern teams." />
     <link rel="stylesheet" href="styles/main.css" />
     <script defer src="js/site.js"></script>
 </head>
-<body class="page-home">
+
+<body class="theme-1 page-home">
 <header class="site-header">
     <div class="container nav-container">
-        <a href="index.html" class="logo">
-            <span class="logo-mark"></span>
+        <!-- THEME-CHANGING LOGO -->
+        <a href="index.html" class="logo theme-toggle" id="theme-toggle">
+            <svg width="34" height="34" viewBox="0 0 100 100" class="logo-icon">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="8"/>
+                <path d="M30 50 L50 20 L70 50 L50 80 Z" fill="currentColor"/>
+            </svg>
             <span class="logo-text">Zypher<span class="logo-accent">Agent</span></span>
         </a>
 
@@ -27,15 +32,13 @@
         <div class="nav-actions">
             <a href="demos.html" class="btn btn-ghost">View demos</a>
             <a href="contact.html" class="btn btn-primary">Book a call</a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                <span></span><span></span>
-            </button>
+            <button class="nav-toggle" id="nav-toggle"><span></span><span></span></button>
         </div>
     </div>
 </header>
 
 <main>
-    <!-- Hero -->
+    <!-- HERO -->
     <section id="hero" class="hero" data-animate="fade-up">
         <div class="container hero-grid">
             <div class="hero-copy">
@@ -47,22 +50,13 @@
 
                 <div class="hero-cta-row">
                     <a href="contact.html" class="btn btn-primary">Schedule a discovery call</a>
-                    <a href="demos.html" class="btn btn-ghost hero-secondary">View the live-style demos</a>
+                    <a href="demos.html" class="btn btn-ghost hero-secondary">View demos</a>
                 </div>
 
                 <div class="hero-metadata">
-                    <div>
-                        <span class="meta-label">Typical response time</span>
-                        <span class="meta-value">~300ms</span>
-                    </div>
-                    <div>
-                        <span class="meta-label">Channels</span>
-                        <span class="meta-value">Web · Voice · SMS</span>
-                    </div>
-                    <div>
-                        <span class="meta-label">Plays nicely with</span>
-                        <span class="meta-value">Calendars · CRMs · No-code</span>
-                    </div>
+                    <div><span class="meta-label">Response time</span><span class="meta-value">~300ms</span></div>
+                    <div><span class="meta-label">Channels</span><span class="meta-value">Web · Voice · SMS</span></div>
+                    <div><span class="meta-label">Integrations</span><span class="meta-value">Calendars · CRMs</span></div>
                 </div>
             </div>
 
@@ -72,176 +66,124 @@
                         <span class="pill pill-soft">Universal voice agent</span>
                         <span class="status-dot">Live</span>
                     </div>
+
                     <div class="hero-card-body">
                         <div class="hero-stream">
                             <div class="stream-row stream-row-user">
                                 <span class="stream-avatar">C</span>
-                                <p>“Hi, I’d like to speak to someone about booking in this week if possible.”</p>
+                                <p>“Hi, I’d like to book in for this week.”</p>
                             </div>
                             <div class="stream-row stream-row-agent">
                                 <span class="stream-avatar stream-avatar-agent">Z</span>
-                                <p>
-                                    “Of course. I can see a few options. Would
-                                    <strong>Thursday at 4:30pm</strong> work, or would you prefer Friday morning?”
-                                </p>
+                                <p>“Certainly. Thursday at 4:30pm or Friday morning – which do you prefer?”</p>
                             </div>
                             <div class="stream-row stream-row-user">
                                 <span class="stream-avatar">C</span>
-                                <p>“Thursday at 4:30pm is ideal.”</p>
+                                <p>“Thursday works.”</p>
                             </div>
                             <div class="stream-row stream-row-agent faint">
                                 <span class="stream-avatar stream-avatar-agent">Z</span>
-                                <p>Booked · Calendar updated · Confirmation email and SMS sent</p>
+                                <p>Booked · Confirmation sent</p>
                             </div>
                         </div>
                     </div>
+
                     <div class="hero-card-footer">
                         <span class="pill pill-outline">Sector-agnostic</span>
-                        <span class="pill pill-outline">Human handover when needed</span>
+                        <span class="pill pill-outline">Human handover</span>
                     </div>
                 </div>
+
                 <div class="hero-stats-card float-soft" data-animate="fade-up-delayed">
-                    <p class="small-label">What teams usually see</p>
+                    <p class="small-label">Impact</p>
                     <div class="hero-stats-grid">
-                        <div>
-                            <span class="stat-number">4–7×</span>
-                            <span class="stat-label">More qualified conversations</span>
-                        </div>
-                        <div>
-                            <span class="stat-number">70%</span>
-                            <span class="stat-label">Enquiries handled by AI</span>
-                        </div>
-                        <div>
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-label">Coverage, without rota planning</span>
-                        </div>
+                        <div><span class="stat-number">4–7×</span><span class="stat-label">More qualified conversations</span></div>
+                        <div><span class="stat-number">70%</span><span class="stat-label">Automated enquiries</span></div>
+                        <div><span class="stat-number">24/7</span><span class="stat-label">Coverage</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust strip -->
+    <!-- TRUST -->
     <section class="trust-strip" data-animate="fade-up">
         <div class="container trust-grid">
-            <p class="trust-label">Plugs into your existing stack</p>
+            <p class="trust-label">Plugs into your stack</p>
             <div class="trust-icons">
-                <span>Google Calendar</span>
-                <span>HubSpot</span>
-                <span>Notion</span>
-                <span>Slack</span>
-                <span>Zapier / Make</span>
+                <span>Google Calendar</span><span>HubSpot</span><span>Slack</span><span>Notion</span><span>Zapier / Make</span>
             </div>
         </div>
     </section>
 
-    <!-- Use cases -->
+    <!-- USE CASES -->
     <section id="use-cases" class="section" data-animate="fade-up">
         <div class="container">
-            <div class="section-header">
-                <h2>Where Zypher Agent quietly steps in.</h2>
-                <p>
-                    We focus on moments where speed, tone and accuracy matter – and where a missed message usually means a missed opportunity.
-                </p>
-            </div>
-
+            <h2>Where Zypher Agent quietly steps in.</h2>
             <div class="cards-grid cards-grid-3">
                 <article class="card hover-lift">
                     <h3>First-contact and lead capture</h3>
-                    <p>
-                        AI agents that greet visitors, ask sensible questions, qualify intent and route only serious opportunities to you or your team.
-                    </p>
+                    <p>Agents that greet visitors, ask questions, qualify intent and route only serious leads.</p>
                     <ul class="card-list">
-                        <li>Website and landing page entry points</li>
-                        <li>WhatsApp and SMS hand-offs</li>
-                        <li>Automatic lead scoring into your CRM</li>
+                        <li>Website and landing pages</li>
+                        <li>WhatsApp and SMS</li>
+                        <li>Automatic lead scoring</li>
                     </ul>
                 </article>
 
                 <article class="card hover-lift">
-                    <h3>Appointment setting and routing</h3>
-                    <p>
-                        Agents that negotiate times, check calendars and send confirmations, so you stop going back-and-forth over email.
-                    </p>
+                    <h3>Appointment setting</h3>
+                    <p>Agents that negotiate times, check calendars and send confirmations.</p>
                     <ul class="card-list">
-                        <li>Two-way calendar synchronisation</li>
-                        <li>Reschedule and cancellation flows</li>
-                        <li>Routing by team, service or location</li>
+                        <li>Two-way synchronisation</li>
+                        <li>Rescheduling flows</li>
+                        <li>Routing by team/service</li>
                     </ul>
                 </article>
 
                 <article class="card hover-lift">
-                    <h3>Operational follow-up and admin</h3>
-                    <p>
-                        Behind-the-scenes workflows that update records, send follow-ups and keep everyone in the loop after each interaction.
-                    </p>
+                    <h3>Operational follow-up</h3>
+                    <p>Automations that update records, draft messages and keep teams informed.</p>
                     <ul class="card-list">
-                        <li>Call summaries into Slack or email</li>
-                        <li>Automatic status updates in your CRM</li>
-                        <li>Alerts if anything fails or looks unusual</li>
+                        <li>Slack/email summaries</li>
+                        <li>CRM updates</li>
+                        <li>Error alerts</li>
                     </ul>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- Process -->
+    <!-- PROCESS -->
     <section id="process" class="section section-muted" data-animate="fade-up">
         <div class="container">
-            <div class="section-header">
-                <h2>A simple, opinionated build process.</h2>
-                <p>
-                    No endless workshops. We keep things practical, technical and focused on getting a live agent into your hands quickly.
-                </p>
-            </div>
-
+            <h2>A simple, opinionated build process.</h2>
             <ol class="process-steps">
                 <li class="process-step hover-line">
                     <span class="step-number">01</span>
-                    <div>
-                        <h3>Discovery and call flows</h3>
-                        <p>
-                            We map the conversations you already have, the tools you rely on and the edge cases that must be handled gracefully.
-                        </p>
-                    </div>
+                    <div><h3>Discovery</h3><p>We map your journeys, tools and edge cases.</p></div>
                 </li>
                 <li class="process-step hover-line">
                     <span class="step-number">02</span>
-                    <div>
-                        <h3>Prototype and sandbox</h3>
-                        <p>
-                            You receive a private testing environment to speak to the agent, push it to its limits and refine the experience together.
-                        </p>
-                    </div>
+                    <div><h3>Prototype</h3><p>You receive a sandbox to test and refine tone and flow.</p></div>
                 </li>
                 <li class="process-step hover-line">
                     <span class="step-number">03</span>
-                    <div>
-                        <h3>Integrate and monitor</h3>
-                        <p>
-                            We connect to your calendars, systems and messaging tools, then monitor performance and iterate in the early weeks.
-                        </p>
-                    </div>
+                    <div><h3>Integrate</h3><p>We connect everything, monitor performance and iterate.</p></div>
                 </li>
             </ol>
-
-            <div class="process-cta">
-                <p>Have a specific journey in mind already?</p>
-                <a href="contact.html" class="btn btn-primary">Tell us what you’d like to automate</a>
-            </div>
         </div>
     </section>
 </main>
 
 <footer class="site-footer">
-    <div class="container footer-grid" data-animate="fade-up">
+    <div class="container footer-grid">
         <div class="footer-main">
-            <div class="logo footer-logo">
-                <span class="logo-mark"></span>
+            <a href="#" class="logo footer-logo">
                 <span class="logo-text">Zypher<span class="logo-accent">Agent</span></span>
-            </div>
+            </a>
             <p class="footer-copy">
-                Zypher Agent builds bespoke AI agents and automations for teams that want less busywork and more meaningful work.
+                Bespoke AI agents and automation for teams that want less busywork and more meaningful work.
             </p>
         </div>
         <div class="footer-links">
@@ -249,9 +191,7 @@
             <a href="contact.html">Contact</a>
         </div>
         <div class="footer-meta">
-            <span>&copy; <span id="year"></span> Zypher Agent</span>
-            <span class="dot">•</span>
-            <span>Based in London, working globally.</span>
+            &copy; <span id="year"></span> Zypher Agent
         </div>
     </div>
 </footer>
