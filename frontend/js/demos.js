@@ -4,12 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (!filterButtons.length || !demoCards.length) return;
 
-    // Filter by type
+    /* Filter by type */
     filterButtons.forEach((button) => {
         button.addEventListener("click", () => {
             const filter = button.dataset.filter || "all";
 
-            // Active button styling
             filterButtons.forEach((btn) => btn.classList.remove("is-active"));
             button.classList.add("is-active");
 
@@ -18,10 +17,17 @@ document.addEventListener("DOMContentLoaded", () => {
                 const matches = filter === "all" || filter === type;
                 card.style.display = matches ? "block" : "none";
             });
+
+            // After filter change, scroll to top of grid on small screens
+            const grid = document.getElementById("demo-grid");
+            if (grid && window.innerWidth < 900) {
+                const top = grid.getBoundingClientRect().top + window.scrollY - 90;
+                window.scrollTo({ top, behavior: "smooth" });
+            }
         });
     });
 
-    // Click to highlight demo
+    /* Click to highlight demo */
     demoCards.forEach((card) => {
         card.addEventListener("click", () => {
             demoCards.forEach((c) => c.classList.remove("is-active"));
