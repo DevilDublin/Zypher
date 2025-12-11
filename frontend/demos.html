@@ -4,23 +4,29 @@
     <meta charset="UTF-8" />
     <title>Zypher Agent – AI agent demos</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Explore demos of Zypher Agent’s AI voice agents, chat assistants and automation flows." />
+    <meta name="description"
+        content="Explore demos of Zypher Agent’s AI voice agents, chat assistants and automation flows." />
     <link rel="stylesheet" href="styles/main.css" />
     <script defer src="js/site.js"></script>
     <script defer src="js/demos.js"></script>
 </head>
+
 <body class="page-demos">
+
 <header class="site-header">
     <div class="container nav-container">
 
+        <!-- LEFT SIDE: LOGO + THEME TOGGLE -->
         <div class="nav-left">
             <a href="index.html" class="logo">
-                <span class="logo-mark"></span>
+                <img src="assets/zypher-logo.svg" alt="Zypher Logo" class="logo-svg" />
                 <span class="logo-text">Zypher<span class="logo-accent">Agent</span></span>
             </a>
+
             <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">◈</button>
         </div>
 
+        <!-- NAVIGATION -->
         <nav class="nav-links" id="nav-links">
             <a href="index.html">Home</a>
             <a href="demos.html" class="is-active">Demos</a>
@@ -29,10 +35,15 @@
             <a href="contact.html">Contact</a>
         </nav>
 
+        <!-- RIGHT SIDE ACTION -->
         <div class="nav-actions">
             <a href="contact.html" class="btn btn-primary">Book a call</a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"><span></span><span></span></button>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span>
+            </button>
         </div>
+
     </div>
 </header>
 
@@ -41,11 +52,13 @@
     <!-- HERO -->
     <section class="hero hero-slim" data-animate="fade-up">
         <div class="container hero-grid hero-grid-slim">
+
             <div class="hero-copy">
                 <p class="eyebrow">Demo library</p>
                 <h1>What an AI agent actually feels like.</h1>
                 <p class="hero-subtitle">
-                    These are short, realistic scenarios to give you a sense of tone, speed and structure. Every deployed agent is tailored to a specific business, but the building blocks are similar.
+                    These short scenarios give you a sense of tone, speed and structure.
+                    Every deployed agent is tailored to its business, but the building blocks are similar.
                 </p>
             </div>
 
@@ -53,14 +66,16 @@
                 <div class="note-card glow-soft">
                     <p class="small-label">Adding real recordings</p>
                     <ul>
-                        <li>Place your audio files in <code>assets/demos/</code>.</li>
-                        <li>Update the <code>src</code> attributes on the audio or video players.</li>
-                        <li>We can replace any of these simulated demos with live calls later.</li>
+                        <li>Place audio files in <code>assets/demos/</code></li>
+                        <li>Update the <code>src</code> attributes in your cards</li>
+                        <li>We can replace simulations with real calls later</li>
                     </ul>
                 </div>
             </div>
+
         </div>
     </section>
+
 
     <!-- DEMO FILTERS -->
     <section class="section section-muted-top" data-animate="fade-up">
@@ -75,18 +90,20 @@
                 </div>
             </div>
 
+            <!-- DEMO GRID -->
             <div class="demo-grid" id="demo-grid">
 
-                <!-- Demo 1: NO AUDIO PLAYER ANYMORE -->
+
+                <!-- DEMO 1 -->
                 <article class="demo-card is-active hover-lift" data-type="voice" data-animate="fade-up">
                     <header class="demo-card-header">
                         <span class="pill pill-soft">Voice agent</span>
-                        <h2>Universal inbound booking and triage</h2>
+                        <h2>Universal inbound booking & triage</h2>
                     </header>
 
                     <p class="demo-description">
-                        A neutral, sector-agnostic voice agent that answers inbound calls, understands why the person is calling,
-                        and either books time in a diary or routes them to the right place.
+                        A calm, neutral voice agent that answers inbound calls, recognises intent, negotiates times,
+                        and books appointments automatically.
                     </p>
 
                     <div class="demo-media">
@@ -94,48 +111,52 @@
                             <span class="play-icon">📞</span>
                             <p>
                                 Example conversation:<br><br>
+
                                 <strong>Caller:</strong> “Hi, I’d like to check availability for this week.”<br>
                                 <strong>Agent:</strong> “Certainly. Are you looking to book a consultation or follow up on something?”<br>
-                                <strong>Caller:</strong> “A consultation, ideally.”<br>
-                                <strong>Agent:</strong> “No problem. I can see Thursday at 4:00pm or Friday at 11:30am. Which suits you better?”<br>
-                                <strong>Caller:</strong> “Thursday, please.”<br>
-                                <strong>Agent:</strong> “You’re now booked for Thursday at 4:00pm. I've emailed you a confirmation.”
+                                <strong>Caller:</strong> “A consultation.”<br>
+                                <strong>Agent:</strong> “I can offer Thursday at 4pm or Friday at 11:30am.”<br>
+                                <strong>Caller:</strong> “Thursday works.”<br>
+                                <strong>Agent:</strong> “You’re booked. A confirmation email is on its way.”
                             </p>
                         </div>
+                    </div>
+
+                    <div class="demo-coming-soon">
+                        <em>🎧 Voice demo coming soon – Twilio integration underway.</em>
                     </div>
 
                     <footer class="demo-meta">
                         <span>Useful for: consultants, agencies, service providers</span>
                         <span class="dot"></span>
-                        <span>Outcome: booked slots, fewer missed calls</span>
+                        <span>Outcome: more booked calls, fewer missed leads</span>
                     </footer>
-
-                    <div class="demo-coming-soon">
-                        <em>🎧 Voice demo coming soon – currently integrating Twilio and call routing.</em>
-                    </div>
                 </article>
 
-                <!-- Demo 2 -->
+
+                <!-- DEMO 2 -->
                 <article class="demo-card hover-lift" data-type="chat" data-animate="fade-up">
                     <header class="demo-card-header">
                         <span class="pill pill-soft">Chat assistant</span>
-                        <h2>Website intake and qualification assistant</h2>
+                        <h2>Website intake & qualification assistant</h2>
                     </header>
 
                     <p class="demo-description">
-                        A conversational assistant that lives on your website, gathers context, checks fit, and then passes the right opportunities on to you.
+                        A conversational assistant for websites that gathers context, checks fit,
+                        and sends structured summaries to your CRM or inbox.
                     </p>
 
                     <div class="demo-media">
                         <div class="demo-placeholder">
                             <span class="play-icon">⌨</span>
                             <p>
-                                <strong>Visitor:</strong> “Hi, we’re looking for help automating parts of our onboarding.”<br>
-                                <strong>Assistant:</strong> “Happy to help. Roughly how many new clients do you onboard each month?”<br>
+                                Example conversation:<br><br>
+                                <strong>Visitor:</strong> “We need help automating onboarding.”<br>
+                                <strong>Assistant:</strong> “How many new clients per month?”<br>
                                 <strong>Visitor:</strong> “20–30.”<br>
-                                <strong>Assistant:</strong> “Understood. Are you mainly looking to automate scheduling or document collection?”<br>
+                                <strong>Assistant:</strong> “Got it. Are you automating scheduling, docs, or reminders?”<br>
                                 <strong>Visitor:</strong> “Scheduling + reminders.”<br>
-                                <strong>Assistant:</strong> “Perfect. I’ll send this to the team with your email.”
+                                <strong>Assistant:</strong> “I’ll package that and pass it on with your email.”
                             </p>
                         </div>
                     </div>
@@ -143,30 +164,33 @@
                     <footer class="demo-meta">
                         <span>Channels: on-site widget, WhatsApp, SMS</span>
                         <span class="dot"></span>
-                        <span>Outcome: fewer form fills, more real conversations</span>
+                        <span>Outcome: fewer forms, more conversations</span>
                     </footer>
                 </article>
 
-                <!-- Demo 3 -->
+
+                <!-- DEMO 3 -->
                 <article class="demo-card hover-lift" data-type="voice" data-animate="fade-up">
                     <header class="demo-card-header">
                         <span class="pill pill-soft">Voice agent</span>
-                        <h2>Missed-call rescue and callback agent</h2>
+                        <h2>Missed-call rescue & callback agent</h2>
                     </header>
 
                     <p class="demo-description">
-                        When you miss a call, the agent automatically dials back, acknowledges the missed call, and either captures a message or books the next step.
+                        When you miss a call, the agent automatically calls back,
+                        acknowledges the missed call, and secures the next step.
                     </p>
 
                     <div class="demo-media">
                         <div class="demo-placeholder">
                             <span class="play-icon">▶</span>
                             <p>
-                                <strong>Agent:</strong> “Hello, calling back on behalf of the team…”<br>
-                                <strong>Caller:</strong> “Can I book for tomorrow?”<br>
-                                <strong>Agent:</strong> “Available slots: 2pm or 4pm.”<br>
+                                Example scenario:<br><br>
+                                <strong>Agent:</strong> “We noticed a missed call. Want to leave a message or book a call?”<br>
+                                <strong>Caller:</strong> “Book a call.”<br>
+                                <strong>Agent:</strong> “I can offer 2pm or 4pm tomorrow.”<br>
                                 <strong>Caller:</strong> “4pm.”<br>
-                                <strong>Agent:</strong> “Great. You're booked and will receive a confirmation.”
+                                <strong>Agent:</strong> “Booked. Confirmation sent.”
                             </p>
                         </div>
                     </div>
@@ -178,26 +202,30 @@
                     </footer>
                 </article>
 
-                <!-- Demo 4 -->
+
+                <!-- DEMO 4 -->
                 <article class="demo-card hover-lift" data-type="automation" data-animate="fade-up">
                     <header class="demo-card-header">
                         <span class="pill pill-soft">Automation flow</span>
-                        <h2>Post-call summary and follow-up sequence</h2>
+                        <h2>Post-call summary & follow-up sequence</h2>
                     </header>
 
                     <p class="demo-description">
-                        After a call or chat, an automation creates a summary, updates the record, and drafts a follow-up email automatically.
+                        After each call, an automation drafts a summary, updates the CRM,
+                        and prepares a follow-up email automatically.
                     </p>
 
                     <div class="demo-media">
                         <div class="demo-placeholder">
                             <span class="play-icon">⚙</span>
                             <p>
+                                Example output:<br><br>
                                 – Contact: Jane Smith<br>
-                                – Context: wants automation package<br>
-                                – Tools: Google Sheets + HubSpot<br>
-                                – Next step: 45min call Wed<br><br>
-                                All logged + draft follow-up emailed.
+                                – Interested in automation package<br>
+                                – Wants to reduce manual data entry<br>
+                                – Uses Sheets + HubSpot<br>
+                                – Next step: 45-min scoping call<br><br>
+                                Summary + follow-up drafted automatically.
                             </p>
                         </div>
                     </div>
@@ -205,54 +233,64 @@
                     <footer class="demo-meta">
                         <span>Integrations: calendar, CRM, email</span>
                         <span class="dot"></span>
-                        <span>Outcome: consistent follow-up</span>
+                        <span>Outcome: no missed follow-ups</span>
                     </footer>
                 </article>
 
-                <!-- Demo 5 -->
+
+                <!-- DEMO 5 -->
                 <article class="demo-card hover-lift" data-type="chat" data-animate="fade-up">
                     <header class="demo-card-header">
                         <span class="pill pill-soft">Internal assistant</span>
-                        <h2>Internal operations and “ask me anything” agent</h2>
+                        <h2>Internal “Ask Me Anything” knowledge agent</h2>
                     </header>
 
                     <p class="demo-description">
-                        Understands your documentation and processes so your team can get instant answers.
+                        An internal assistant that can answer questions about your own playbooks,
+                        SOPs, and documentation instantly.
                     </p>
 
                     <div class="demo-media">
                         <div class="demo-placeholder">
                             <span class="play-icon">⌨</span>
                             <p>
-                                <strong>Team:</strong> “What’s our onboarding process?”<br>
-                                <strong>Agent:</strong> “Five steps: details → workspace → connect tools → test → book call.”<br>
-                                <strong>Team:</strong> “Send the checklist.”<br>
-                                <strong>Agent:</strong> “Sent + linked to Notion.”
+                                Example:<br><br>
+                                <strong>Team:</strong> “What’s our onboarding process for premium clients?”<br>
+                                <strong>Assistant:</strong> “There are five steps: ... I can paste the checklist.”<br>
+                                <strong>Team:</strong> “Paste it + link template.”<br>
+                                <strong>Assistant:</strong> “Here you go.”
                             </p>
                         </div>
                     </div>
 
                     <footer class="demo-meta">
-                        <span>Useful for: onboarding, ops</span>
+                        <span>Useful for: ops, onboarding, support</span>
                         <span class="dot"></span>
-                        <span>Outcome: fewer interruptions</span>
+                        <span>Outcome: fewer Slack interruptions</span>
                     </footer>
                 </article>
 
-            </div>
+
+            </div> <!-- end demo-grid -->
+
         </div>
     </section>
 
 </main>
 
+<!-- FOOTER -->
 <footer class="site-footer">
     <div class="container footer-grid" data-animate="fade-up">
+
         <div class="footer-main">
-            <div class="logo footer-logo">
-                <span class="logo-mark"></span>
+            <a href="index.html" class="logo footer-logo">
+                <img src="assets/zypher-logo.svg" alt="Zypher Logo" class="logo-svg" />
                 <span class="logo-text">Zypher<span class="logo-accent">Agent</span></span>
-            </div>
-            <p class="footer-copy">Every agent and automation shown here can be adapted to your tools, tone and sector.</p>
+            </a>
+
+            <p class="footer-copy">
+                Every agent and automation shown here can be adapted to your tools, tone of voice and sector.
+            </p>
         </div>
 
         <div class="footer-links">
@@ -263,6 +301,7 @@
         <div class="footer-meta">
             <span>&copy; <span id="year"></span> Zypher Agent</span>
         </div>
+
     </div>
 </footer>
 
