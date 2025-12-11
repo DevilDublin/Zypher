@@ -1,199 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Zypher Agent – AI agents that quietly run your business</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Zypher Agent builds bespoke AI agents that handle enquiries, bookings and follow-ups for modern teams." />
-    <link rel="stylesheet" href="styles/main.css" />
-    <script defer src="js/site.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zypher AI</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <script defer src="js/site.js"></script>
 </head>
 
-<body class="theme-1 page-home">
-<header class="site-header">
-    <div class="container nav-container">
-        <!-- THEME-CHANGING LOGO -->
-        <a href="index.html" class="logo theme-toggle" id="theme-toggle">
-            <svg width="34" height="34" viewBox="0 0 100 100" class="logo-icon">
-                <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="8"/>
-                <path d="M30 50 L50 20 L70 50 L50 80 Z" fill="currentColor"/>
-            </svg>
-            <span class="logo-text">Zypher<span class="logo-accent">Agent</span></span>
-        </a>
-
-        <nav class="nav-links" id="nav-links">
-            <a href="#hero" class="is-active">Home</a>
-            <a href="demos.html">Demos</a>
-            <a href="#use-cases">Use cases</a>
-            <a href="#process">Process</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-
-        <div class="nav-actions">
-            <a href="demos.html" class="btn btn-ghost">View demos</a>
-            <a href="contact.html" class="btn btn-primary">Book a call</a>
-            <button class="nav-toggle" id="nav-toggle"><span></span><span></span></button>
-        </div>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <img src="js/assets/zypher-logo.svg" alt="Zypher Logo" />
+      <span>Zypher AI</span>
     </div>
-</header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="demos.html">Demos</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button id="themeToggle" class="theme-btn">◈</button>
+  </header>
 
-<main>
-    <!-- HERO -->
-    <section id="hero" class="hero" data-animate="fade-up">
-        <div class="container hero-grid">
-            <div class="hero-copy">
-                <p class="eyebrow">Boutique AI agents • London</p>
-                <h1>AI agents that work whilst you sleep.</h1>
-                <p class="hero-subtitle">
-                    Zypher Agent designs, builds and deploys bespoke AI agents that handle enquiries, qualify leads and book appointments – connected directly to the tools you already use.
-                </p>
+  <main class="hero">
+    <h1>The Future of Intelligent Automation</h1>
+    <p>Custom AI Systems • Voice AI • Automation</p>
+    <a href="demos.html" class="cta">View Live Demos</a>
+  </main>
 
-                <div class="hero-cta-row">
-                    <a href="contact.html" class="btn btn-primary">Schedule a discovery call</a>
-                    <a href="demos.html" class="btn btn-ghost hero-secondary">View demos</a>
-                </div>
-
-                <div class="hero-metadata">
-                    <div><span class="meta-label">Response time</span><span class="meta-value">~300ms</span></div>
-                    <div><span class="meta-label">Channels</span><span class="meta-value">Web · Voice · SMS</span></div>
-                    <div><span class="meta-label">Integrations</span><span class="meta-value">Calendars · CRMs</span></div>
-                </div>
-            </div>
-
-            <div class="hero-visual" data-parallax>
-                <div class="hero-card glow-soft">
-                    <div class="hero-card-header">
-                        <span class="pill pill-soft">Universal voice agent</span>
-                        <span class="status-dot">Live</span>
-                    </div>
-
-                    <div class="hero-card-body">
-                        <div class="hero-stream">
-                            <div class="stream-row stream-row-user">
-                                <span class="stream-avatar">C</span>
-                                <p>“Hi, I’d like to book in for this week.”</p>
-                            </div>
-                            <div class="stream-row stream-row-agent">
-                                <span class="stream-avatar stream-avatar-agent">Z</span>
-                                <p>“Certainly. Thursday at 4:30pm or Friday morning – which do you prefer?”</p>
-                            </div>
-                            <div class="stream-row stream-row-user">
-                                <span class="stream-avatar">C</span>
-                                <p>“Thursday works.”</p>
-                            </div>
-                            <div class="stream-row stream-row-agent faint">
-                                <span class="stream-avatar stream-avatar-agent">Z</span>
-                                <p>Booked · Confirmation sent</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="hero-card-footer">
-                        <span class="pill pill-outline">Sector-agnostic</span>
-                        <span class="pill pill-outline">Human handover</span>
-                    </div>
-                </div>
-
-                <div class="hero-stats-card float-soft" data-animate="fade-up-delayed">
-                    <p class="small-label">Impact</p>
-                    <div class="hero-stats-grid">
-                        <div><span class="stat-number">4–7×</span><span class="stat-label">More qualified conversations</span></div>
-                        <div><span class="stat-number">70%</span><span class="stat-label">Automated enquiries</span></div>
-                        <div><span class="stat-number">24/7</span><span class="stat-label">Coverage</span></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TRUST -->
-    <section class="trust-strip" data-animate="fade-up">
-        <div class="container trust-grid">
-            <p class="trust-label">Plugs into your stack</p>
-            <div class="trust-icons">
-                <span>Google Calendar</span><span>HubSpot</span><span>Slack</span><span>Notion</span><span>Zapier / Make</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- USE CASES -->
-    <section id="use-cases" class="section" data-animate="fade-up">
-        <div class="container">
-            <h2>Where Zypher Agent quietly steps in.</h2>
-            <div class="cards-grid cards-grid-3">
-                <article class="card hover-lift">
-                    <h3>First-contact and lead capture</h3>
-                    <p>Agents that greet visitors, ask questions, qualify intent and route only serious leads.</p>
-                    <ul class="card-list">
-                        <li>Website and landing pages</li>
-                        <li>WhatsApp and SMS</li>
-                        <li>Automatic lead scoring</li>
-                    </ul>
-                </article>
-
-                <article class="card hover-lift">
-                    <h3>Appointment setting</h3>
-                    <p>Agents that negotiate times, check calendars and send confirmations.</p>
-                    <ul class="card-list">
-                        <li>Two-way synchronisation</li>
-                        <li>Rescheduling flows</li>
-                        <li>Routing by team/service</li>
-                    </ul>
-                </article>
-
-                <article class="card hover-lift">
-                    <h3>Operational follow-up</h3>
-                    <p>Automations that update records, draft messages and keep teams informed.</p>
-                    <ul class="card-list">
-                        <li>Slack/email summaries</li>
-                        <li>CRM updates</li>
-                        <li>Error alerts</li>
-                    </ul>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section id="process" class="section section-muted" data-animate="fade-up">
-        <div class="container">
-            <h2>A simple, opinionated build process.</h2>
-            <ol class="process-steps">
-                <li class="process-step hover-line">
-                    <span class="step-number">01</span>
-                    <div><h3>Discovery</h3><p>We map your journeys, tools and edge cases.</p></div>
-                </li>
-                <li class="process-step hover-line">
-                    <span class="step-number">02</span>
-                    <div><h3>Prototype</h3><p>You receive a sandbox to test and refine tone and flow.</p></div>
-                </li>
-                <li class="process-step hover-line">
-                    <span class="step-number">03</span>
-                    <div><h3>Integrate</h3><p>We connect everything, monitor performance and iterate.</p></div>
-                </li>
-            </ol>
-        </div>
-    </section>
-</main>
-
-<footer class="site-footer">
-    <div class="container footer-grid">
-        <div class="footer-main">
-            <a href="#" class="logo footer-logo">
-                <span class="logo-text">Zypher<span class="logo-accent">Agent</span></span>
-            </a>
-            <p class="footer-copy">
-                Bespoke AI agents and automation for teams that want less busywork and more meaningful work.
-            </p>
-        </div>
-        <div class="footer-links">
-            <a href="demos.html">Demos</a>
-            <a href="contact.html">Contact</a>
-        </div>
-        <div class="footer-meta">
-            &copy; <span id="year"></span> Zypher Agent
-        </div>
-    </div>
-</footer>
+  <footer class="footer">
+    <p>© 2025 Zypher AI — All rights reserved.</p>
+  </footer>
 </body>
 </html>
