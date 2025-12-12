@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="styles/main.css" />
     <script defer src="js/site.js"></script>
 </head>
+
 <body class="page-contact">
+
 <header class="site-header">
     <div class="container nav-container">
 
@@ -40,125 +42,132 @@
 
 <main>
 
-    <section class="hero hero-slim" data-animate="fade-up">
-        <div class="container hero-grid hero-grid-slim">
-            <div class="hero-copy">
-                <p class="eyebrow">Work with Zypher Agent</p>
-                <h1>Share a bit about your situation.</h1>
-                <p class="hero-subtitle">
-                    You do not need a long brief. A few lines on where you’re stuck and what “good” would look like is enough for us to respond with a clear next step.
-                </p>
-            </div>
+<section class="hero hero-slim" data-animate="fade-up">
+    <div class="container hero-grid hero-grid-slim">
+        <div class="hero-copy">
+            <p class="eyebrow">Work with Zypher Agent</p>
+            <h1>Share a bit about your situation.</h1>
+            <p class="hero-subtitle">
+                You do not need a long brief. A few lines on where you’re stuck and what “good” would look like is enough for us to respond with a clear next step.
+            </p>
+        </div>
 
-            <div class="hero-visual hero-visual-note">
-                <div class="note-card glow-soft">
-                    <p class="small-label">Prefer email?</p>
-                    <p>You can also reach us at<br><strong>zypheragent25@gmail.com</strong>.</p>
-                </div>
+        <div class="hero-visual hero-visual-note">
+            <div class="note-card glow-soft">
+                <p class="small-label">Prefer email?</p>
+                <p>You can also reach us at<br><strong>zypheragent25@gmail.com</strong>.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="section section-muted-top" data-animate="fade-up">
-        <div class="container contact-grid">
+<section class="section section-muted-top" data-animate="fade-up">
+    <div class="container contact-grid">
 
-            <form
-                name="contact"
-                method="POST"
-                data-netlify="true"
-                netlify-honeypot="bot-field"
-                class="contact-form"
-                id="contact-form"
-            >
-                <input type="hidden" name="form-name" value="contact" />
+        <!-- NETLIFY FORM -->
+        <form
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/thanks.html"
+            class="contact-form"
+            id="contact-form"
+        >
+            <input type="hidden" name="form-name" value="contact" />
 
-                <p style="display:none;">
-                    <label>Don’t fill this in if you’re human:
-                        <input name="bot-field" />
-                    </label>
-                </p>
+            <p style="display:none;">
+                <label>
+                    Don’t fill this in if you’re human:
+                    <input name="bot-field" />
+                </label>
+            </p>
 
-                <div class="form-row">
-                    <div class="form-field">
-                        <label for="name">Name</label>
-                        <input id="name" name="name" type="text" autocomplete="name" required />
-                    </div>
-
-                    <div class="form-field">
-                        <label for="email">Email</label>
-                        <input id="email" name="email" type="email" autocomplete="email" required />
-                    </div>
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" required />
                 </div>
 
-                <div class="form-row">
-                    <div class="form-field">
-                        <label for="company">Company (optional)</label>
-                        <input id="company" name="company" type="text" autocomplete="organization" />
-                    </div>
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required />
+                </div>
+            </div>
 
-                    <div class="form-field">
-                        <label for="website">Website (optional)</label>
-                        <input id="website" name="website" type="url" placeholder="https://…" />
-                    </div>
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="company">Company (optional)</label>
+                    <input id="company" name="company" type="text" autocomplete="organization" />
                 </div>
 
-                <div class="form-row">
-                    <div class="form-field">
-                        <label for="use-case">What would you like to automate or improve?</label>
-                        <textarea id="use-case" name="message" rows="4"
-                          placeholder="A quick overview is perfect – where you are now and what ‘better’ would feel like."
-                          required></textarea>
-                    </div>
+                <div class="form-field">
+                    <label for="website">Website (optional)</label>
+                    <input id="website" name="website" type="url" placeholder="https://…" />
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="use-case">What would you like to automate or improve?</label>
+                    <textarea
+                        id="use-case"
+                        name="message"
+                        rows="4"
+                        placeholder="A quick overview is perfect – where you are now and what ‘better’ would feel like."
+                        required
+                    ></textarea>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="budget">Rough monthly budget</label>
+                    <select id="budget" name="budget">
+                        <option value="">Select a range</option>
+                        <option value="under-500">Under £500</option>
+                        <option value="500-1500">£500 – £1,500</option>
+                        <option value="1500-3000">£1,500 – £3,000</option>
+                        <option value="3000-plus">£3,000+</option>
+                    </select>
                 </div>
 
-                <div class="form-row">
-                    <div class="form-field">
-                        <label for="budget">Rough monthly budget</label>
-                        <select id="budget" name="budget">
-                            <option value="">Select a range</option>
-                            <option value="under-500">Under £500</option>
-                            <option value="500-1500">£500 – £1,500</option>
-                            <option value="1500-3000">£1,500 – £3,000</option>
-                            <option value="3000-plus">£3,000+</option>
-                        </select>
-                    </div>
-
-                    <div class="form-field">
-                        <label for="timeline">Ideal go-live timeline</label>
-                        <select id="timeline" name="timeline">
-                            <option value="">Select a timeline</option>
-                            <option value="asap">As soon as reasonably possible</option>
-                            <option value="1-3-months">Within 1–3 months</option>
-                            <option value="3-plus">3+ months</option>
-                            <option value="exploring">Just exploring options for now</option>
-                        </select>
-                    </div>
+                <div class="form-field">
+                    <label for="timeline">Ideal go-live timeline</label>
+                    <select id="timeline" name="timeline">
+                        <option value="">Select a timeline</option>
+                        <option value="asap">As soon as reasonably possible</option>
+                        <option value="1-3-months">Within 1–3 months</option>
+                        <option value="3-plus">3+ months</option>
+                        <option value="exploring">Just exploring options for now</option>
+                    </select>
                 </div>
+            </div>
 
-                <div class="form-row form-row-submit">
-                    <button type="submit" class="btn btn-primary">Send enquiry</button>
-                    <p class="form-footnote">We usually reply within one working day.</p>
-                </div>
-            </form>
+            <div class="form-row form-row-submit">
+                <button type="submit" class="btn btn-primary">Send enquiry</button>
+                <p class="form-footnote">We usually reply within one working day.</p>
+            </div>
+        </form>
 
-            <aside class="contact-aside">
-                <div class="contact-aside-card">
-                    <p class="small-label">What to expect</p>
-                    <ol class="aside-list">
-                        <li>We confirm if your use case is a strong fit.</li>
-                        <li>You get 1–2 practical options & timelines.</li>
-                        <li>If sensible, we book a short scoping call.</li>
-                    </ol>
-                </div>
+        <aside class="contact-aside">
+            <div class="contact-aside-card">
+                <p class="small-label">What to expect</p>
+                <ol class="aside-list">
+                    <li>We confirm if your use case is a strong fit.</li>
+                    <li>You get 1–2 practical options & timelines.</li>
+                    <li>If sensible, we book a short scoping call.</li>
+                </ol>
+            </div>
 
-                <div class="contact-aside-card subtle">
-                    <p class="small-label">Where we work</p>
-                    <p>Based in London, working with teams across the UK, Europe and globally.</p>
-                </div>
-            </aside>
+            <div class="contact-aside-card subtle">
+                <p class="small-label">Where we work</p>
+                <p>Based in London, working with teams across the UK, Europe and globally.</p>
+            </div>
+        </aside>
 
-        </div>
-    </section>
+    </div>
+</section>
 
 </main>
 
