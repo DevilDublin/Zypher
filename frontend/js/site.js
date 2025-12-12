@@ -15,9 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (themeToggle) {
         themeToggle.addEventListener("click", () => {
             document.body.classList.toggle("dark-mode");
+
             localStorage.setItem(
                 "theme",
-                document.body.classList.contains("dark-mode") ? "dark" : "light"
+                document.body.classList.contains("dark-mode")
+                    ? "dark"
+                    : "light"
             );
         });
     }
@@ -53,12 +56,22 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", (e) => {
             const targetId = anchor.getAttribute("href");
+            if (!targetId || targetId === "#") return;
+
             const targetEl = document.querySelector(targetId);
             if (!targetEl) return;
 
             e.preventDefault();
-            const offsetTop = targetEl.getBoundingClientRect().top + window.scrollY - 80;
-            window.scrollTo({ top: offsetTop, behavior: "smooth" });
+
+            const offsetTop =
+                targetEl.getBoundingClientRect().top +
+                window.scrollY -
+                80;
+
+            window.scrollTo({
+                top: offsetTop,
+                behavior: "smooth",
+            });
         });
     });
 
@@ -94,8 +107,11 @@ document.addEventListener("DOMContentLoaded", () => {
     ------------------------------ */
     const parallaxEls = document.querySelectorAll("[data-parallax]");
     const handleParallax = () => {
+        if (!parallaxEls.length) return;
+
+        const scrollY = window.scrollY;
         parallaxEls.forEach((el) => {
-            el.style.transform = `translateY(${window.scrollY * -0.07}px)`;
+            el.style.transform = `translateY(${scrollY * -0.07}px)`;
         });
     };
     window.addEventListener("scroll", handleParallax);
@@ -103,6 +119,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* ------------------------------
        Contact form
-       (INTENTIONALLY untouched — Netlify handles submit)
+       IMPORTANT:
+       - Netlify handles submission
+       - Do NOT intercept submit
+       - Do NOT use preventDefault
     ------------------------------ */
 });
