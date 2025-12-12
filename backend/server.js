@@ -54,6 +54,16 @@ app.post("/webhook/netlify-contact", async (req, res) => {
   try {
     console.log("📩 RAW NETLIFY BODY:", req.body);
 
+    // Netlify sends fields as an array → convert to object
+    const fieldsArray = req.body.data || [];
+    const fields = {};
+
+    for (const field of fieldsArray) {
+      fields[field.name] = field.value;
+    }
+
+    console.log("✅ PARSED FIELDS:", fields);
+
     const {
       name,
       email,
@@ -62,14 +72,14 @@ app.post("/webhook/netlify-contact", async (req, res) => {
       message,
       budget,
       timeline,
-    } = req.body;
+    } = fields;
 
     /* --------------------
        INTERNAL EMAIL
     -------------------- */
     await resend.emails.send({
       from: "Zypher Agent <onboarding@resend.dev>",
-      to: INTERNAL_NOTIFY_EMAIL,
+      to: process.env.INTERNAL_NOTIFY_EMAIL,
       subject: "🚀 New Zypher Contact Form Enquiry",
       html: `
         <h2>New Website Enquiry</h2>
@@ -93,9 +103,14 @@ app.post("/webhook/netlify-contact", async (req, res) => {
       subject: "We’ve received your enquiry — Zypher Agent",
       html: `
         <p>Hi ${name},</p>
-        <p>Thanks for reaching out to <strong>Zypher Agent</strong>.</p>
-        <p>We’ve received your enquiry and will get back to you within <strong>one working day</strong>.</p>
-        <p>Best regards,<br/>Zypher Agent</p>
+
+        <p>Thanks for getting in touch with <strong>Zypher Agent</strong>.</p>
+
+        <p>We’ve received your enquiry and will respond within
+        <strong>one working day</strong>.</p>
+
+        <p>Best regards,<br/>
+        Zypher Agent</p>
       `,
     });
 
