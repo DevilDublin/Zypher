@@ -14,12 +14,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 /* --------------------
-   RESEND
+   RESEND SETUP
 -------------------- */
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Admin / internal emails
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
 const INTERNAL_NOTIFY_EMAIL = process.env.INTERNAL_NOTIFY_EMAIL;
+
+// 🔴 IMPORTANT:
+// While domain verification is pending, keep this:
+const FROM_EMAIL = "Zypher Agent <onboarding@resend.dev>";
+
+// 🟢 AFTER verification, change ONLY this line to:
+// const FROM_EMAIL = "Zypher Agent <hello@send.zypheragents.com>";
 
 /* --------------------
    HEALTH CHECK
@@ -34,7 +42,7 @@ app.get("/", (req, res) => {
 app.get("/test-lead", async (req, res) => {
   try {
     const resp = await resend.emails.send({
-      from: "Zypher Agent <onboarding@resend.dev>",
+      from: FROM_EMAIL,
       to: ADMIN_EMAIL,
       subject: "✅ Zypher test email",
       html: "<p>If you see this, Resend is working.</p>",
@@ -57,7 +65,7 @@ app.post("/webhook/netlify-contact", async (req, res) => {
 
     let fields = {};
 
-    // Netlify standard payload
+    // Netlify sends either array or object
     if (Array.isArray(req.body?.data)) {
       for (const field of req.body.data) {
         fields[field.name] = field.value;
@@ -68,15 +76,12 @@ app.post("/webhook/netlify-contact", async (req, res) => {
 
     console.log("✅ NORMALIZED FIELDS:", fields);
 
-    const email = (
-      fields.email ||
-      fields.Email ||
-      fields["form-email"] ||
-      ""
-    )
+    const email = (fields.email || "")
       .toString()
       .trim()
       .toLowerCase();
+
+    if (!email) throw new Error("Client email missing");
 
     const name = (fields.name || "Unknown").toString().trim();
     const company = (fields.company || "—").toString().trim();
@@ -85,17 +90,11 @@ app.post("/webhook/netlify-contact", async (req, res) => {
     const budget = (fields.budget || "—").toString().trim();
     const timeline = (fields.timeline || "—").toString().trim();
 
-    console.log("📌 CLIENT EMAIL:", email);
-
-    if (!email) {
-      throw new Error("Client email missing");
-    }
-
     /* --------------------
        ADMIN EMAIL
     -------------------- */
-    const adminResp = await resend.emails.send({
-      from: "Zypher Agent <onboarding@resend.dev>",
+    await resend.emails.send({
+      from: FROM_EMAIL,
       to: INTERNAL_NOTIFY_EMAIL,
       subject: "🚀 New Zypher Contact Form Lead",
       html: `
@@ -111,14 +110,11 @@ app.post("/webhook/netlify-contact", async (req, res) => {
       `,
     });
 
-    console.log("✅ Admin email sent:", adminResp);
-
     /* --------------------
        CLIENT AUTO-REPLY
-       (deliverability-safe)
     -------------------- */
-    const clientResp = await resend.emails.send({
-      from: `Zypher Agent <${ADMIN_EMAIL}>`,
+    await resend.emails.send({
+      from: FROM_EMAIL,
       to: email,
       replyTo: ADMIN_EMAIL,
       subject: "We’ve received your enquiry — Zypher Agent",
@@ -131,8 +127,7 @@ app.post("/webhook/netlify-contact", async (req, res) => {
       `,
     });
 
-    console.log("✅ Client email sent:", clientResp);
-
+    console.log("✅ Emails sent successfully (admin + client)");
     res.status(200).json({ success: true });
   } catch (err) {
     console.error("❌ Netlify webhook error:", err);
@@ -141,7 +136,7 @@ app.post("/webhook/netlify-contact", async (req, res) => {
 });
 
 /* --------------------
-   START
+   START SERVER
 -------------------- */
 app.listen(PORT, () => {
   console.log(`🚀 Zypher backend running on port ${PORT}`);
