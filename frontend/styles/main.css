@@ -577,3 +577,13 @@ body::before {
 .os-actions button:hover {
   transform:translateY(-4px) scale(1.03);
 }
+
+
+/* ===== FORCE UI ABOVE GLOW ===== */
+.os-root,
+.os-center,
+.os-actions,
+.os-logo {
+  position: relative;
+  z-index: 10;
+}
