@@ -587,3 +587,28 @@ body::before {
   position: relative;
   z-index: 10;
 }
+
+
+/* CORE OS LAYOUT */
+.os-root {
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.os-center {
+  text-align:center;
+}
+
+.os-logo {
+  font-size:4.5rem;
+  letter-spacing:0.3em;
+  margin-bottom:60px;
+}
+
+.os-actions {
+  display:flex;
+  gap:60px;
+  justify-content:center;
+}

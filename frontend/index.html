@@ -6,6 +6,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="styles/main.css">
 </head>
+
+<body class="os">
+  <div class="os-root">
+
+    <div class="os-center">
+      <div class="os-logo">ZYPHER</div>
+
+      <div class="os-actions">
+        <button class="btn-client" onclick="location.href='/dashboard'">CLIENT ACCESS</button>
+        <button class="btn-dev" onclick="openDev()">DEVELOPER TERMINAL</button>
+      </div>
+    </div>
+
+    <div id="dev-gate" class="gate hidden">
+      <div class="gate-box">
+        <div class="gate-title">DEVELOPER ACCESS</div>
+        <input id="devPass" placeholder="Enter access key" type="password">
+        <button onclick="checkDev()">AUTHENTICATE</button>
+        <div id="gateMsg"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function openDev() {
+      document.getElementById("dev-gate").classList.remove("hidden");
+      document.getElementById("devPass").focus();
+    }
+    function checkDev() {
+      const p = document.getElementById("devPass").value;
+      if (p === "zypher") location.href = "/dev";
+      else document.getElementById("gateMsg").innerText = "ACCESS DENIED";
+    }
+  </script>
+
+</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ZYPHER OS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles/main.css">
+</head>
 <body class="os">
 
 <div class="os-root">
