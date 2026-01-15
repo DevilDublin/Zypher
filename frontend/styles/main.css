@@ -1,614 +1,87 @@
 
-body.os {
+html, body {
   margin:0;
-  background:radial-gradient(/* removed */ at top,#0a0020,#000);
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+
+body {
+  background:#020617;
   font-family: Orbitron, monospace;
-  color:#baffff;
 }
 
-.os-root {
-  height:100vh;
+.os-root { z-index: 10; position: relative; 
+  position: absolute;
+  inset: 0;
   display:flex;
-  flex-direction:column;
-  padding:40px;
-}
-
-.os-header {
-  display:flex;
-  justify-content:space-between;
-  letter-spacing:0.3em;
-}
-
-.os-logo {
-  font-size:2.5rem;
-  background:linear-gradient(90deg,#a855ff,#00f6ff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.dot {
-  width:10px;height:10px;/* removed */;
-  background:#00ff99;display:inline-block;
-  box-shadow:0 0 10px #00ff99;
+  align-items:center;
+  justify-content:center;
+  z-index: 1; /* glow layer behind UI */
 }
 
 .os-center {
-  flex:1;
+  position: relative;
   display:flex;
   flex-direction:column;
-  justify-content:flex-start;
   align-items:center;
-  padding-top:140px;
+  gap:50px;
 }
 
-.os-terminal {
-  text-align:center;
-}
-
-.os-terminal .line {
-  margin:10px 0;
-  letter-spacing:0.15em;
-}
-
-.os-actions {
-  display:flex;
-  gap:60px;
-}
-
-.os-actions button {
-  background:transparent;
-  border:1px solid #a855ff;
-  color:#fff;
-  padding:20px 40px;
-  margin:0 20px;
-  cursor:pointer;
-  letter-spacing:0.2em;
-}
-
-.os-actions button:hover {
-  box-shadow:0 0 40px #a855ff;
-}
-
-.gate {
-  position:fixed;
-  inset:0;
-  background:black;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.gate.hidden {display:none;}
-
-.gate-box {
-  text-align:center;
-  border:1px solid #00ff99;
-  padding:40px;
-  box-shadow:0 0 60px #00ff99;
-}
-
-.gate input {
-  background:black;
-  border:1px solid #00ff99;
-  color:#00ff99;
-  padding:10px;
-  margin:10px 0;
-}
-
-
-/* ZYPHER CORE LOGO */
 .os-logo {
-  font-size:3.5rem;
-  text-align:center;
-  margin-bottom:60px;
-  animation: zypherGlow 4s infinite alternate;
-}
-
-@keyframes zypherGlow {
-  0% {
-    text-shadow: 0 0 10px #00f6ff, 0 0 25px #a855ff;
-    opacity: 0.85;
-  }
-  50% {
-    text-shadow: 0 0 25px #00f6ff, 0 0 60px #a855ff;
-    opacity: 1;
-  }
-  100% {
-    text-shadow: 0 0 15px #00f6ff, 0 0 40px #a855ff;
-    opacity: 0.9;
-  }
-}
-
-
-/* NEON OS BUTTONS */
-.os-actions button:first-child {
-  border:2px solid #00f6ff;
-  color:#00f6ff;
-  box-shadow:0 0 20px #00f6ff;
-}
-
-.os-actions button:first-child:hover {
-  background:#00f6ff;
-  color:#000;
-  box-shadow:0 0 50px #00f6ff;
-}
-
-.os-actions button:last-child {
-  border:2px solid #ff3355;
-  color:#ff3355;
-  box-shadow:0 0 20px #ff3355;
-}
-
-.os-actions button:last-child:hover {
-  background:#ff3355;
-  color:#000;
-  box-shadow:0 0 50px #ff3355;
-}
-
-
-/* OS OVERLAY */
-.os-overlay {
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.85);
-  display:none;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-}
-
-.os-modal {
-  background:#020617;
-  border:1px solid #22c55e;
-  box-shadow:0 0 60px #22c55e;
-  padding:40px;
-  border-radius:12px;
-  color:#22c55e;
-  text-align:center;
-}
-
-.os-modal input {
-  width:100%;
-  padding:14px;
-  margin-top:20px;
-  background:black;
-  border:1px solid #22c55e;
-  color:#22c55e;
-}
-
-.os-modal-actions {
-  display:flex;
-  justify-content:space-between;
-  margin-top:20px;
-}
-
-
-.os-core {
-  position:absolute;
-  top:45%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  text-align:center;
-}
-
-.os-logo-core {
-  font-size:5rem;
-  letter-spacing:0.3em;
+  font-family: 'Orbitron', sans-serif;
+  font-size:4rem;
+  letter-spacing:0.4em;
   color:#7dd3fc;
   text-shadow:
     0 0 20px #38bdf8,
-    0 0 60px #0ea5e9,
-    0 0 120px rgba(14,165,233,0.6);
-  animation: /* removed */Pulse 4s infinite alternate;
-}
-
-@keyframes /* removed */Pulse {
-  0% { opacity:0.4; transform:scale(0.95); }
-  50% { opacity:1; }
-  100% { opacity:0.7; transform:scale(1.05); }
-}
-
-
-
-
-#clientBtn {
-  color:#22f7ff;
-  border:2px solid #22f7ff;
-  padding:18px 42px;
-  box-shadow:0 0 30px #22f7ff;
-}
-
-#devBtn {
-  color:#ff3b3b;
-  border:2px solid #ff3b3b;
-  padding:18px 42px;
-  box-shadow:0 0 30px #ff3b3b;
-}
-
-
-body {
-  background:
-    radial-gradient(/* removed */ at top, #020014 0%, #020014 40%, #000 100%);
-  overflow:hidden;
-}
-
-.os-shell {
-  position:fixed;
-  inset:0;
-}
-
-
-.os-core {
-  position:absolute;
-  top:42%;
-  left:50%;
-  transform:translate(-50%,-50%);
-}
-
-
-
-
-.os-shell {
-  position:fixed;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.os-core {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:48px;
-}
-
-.logo {
-  font-size:64px;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-}
-
-.os-buttons {
-  display:flex;
-  gap:32px;
-}
-
-
-/* ================================
-   ZYPHER OS BOOT SEQUENCE
-================================ */
-
-.os-center {
-  animation: osBoot 1.6s ease-out forwards;
-  opacity: 0;
-}
-
-@keyframes osBoot {
-  0% { opacity: 0; transform: translateY(40px) scale(0.98); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-/* Logo pulse */
-.os-logo {
-  animation: logoPulse 4s infinite ease-in-out;
-}
-
-@keyframes logoPulse {
-  0% { text-shadow: 0 0 10px #00f6ff, 0 0 20px #a855ff; }
-  50% { text-shadow: 0 0 40px #00f6ff, 0 0 80px #a855ff; }
-  100% { text-shadow: 0 0 15px #00f6ff, 0 0 30px #a855ff; }
-}
-
-/* Button hover lift */
-.os-actions button {
-  transition: all 0.25s ease;
-}
-
-.os-actions button:hover {
-  transform: translateY(-4px) scale(1.04);
-}
-
-
-/* === HARD CENTER THE OS CORE === */
-.os-root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.os-center {
-  padding-top: 0 !important;
-  justify-content: center !important;
-  text-align: center;
-}
-
-
-/* === ZYPHER CORE FLOAT === */
-.os-logo {
-  animation: coreFloat 6s ease-in-out infinite;
-}
-
-@keyframes coreFloat {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-18px); }
-  100% { transform: translateY(0); }
-}
-
-
-/* === NEON BREATHING BUTTONS === */
-.os-actions button:first-child {
-  animation: cyanPulse 3s infinite alternate;
-}
-
-.os-actions button:last-child {
-  animation: redPulse 3s infinite alternate;
-}
-
-@keyframes cyanPulse {
-  0% { box-shadow: 0 0 15px #00f6ff; }
-  100% { box-shadow: 0 0 45px #00f6ff; }
-}
-
-@keyframes redPulse {
-  0% { box-shadow: 0 0 15px #ff3355; }
-  100% { box-shadow: 0 0 45px #ff3355; }
-}
-
-
-/* === ZYPHER CORE AURA === */
-.os-logo/* removed */ {
-  content: "";
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(/* removed */, rgba(56,189,248,0.35) 0%, rgba(56,189,248,0.15) 30%, transparent 70%);
-  filter: blur(40px);
-  z-index: -1;
-}
-
-.os-logo {
-  position: relative;
-}
-
-
-/* === CORE BACKGROUND ENERGY === */
-/* removed fog */ .os-center/* removed */ {
-  content:"";
-  position:absolute;
-  width:600px;
-  height:600px;
-  background:
-    radial-gradient(/* removed */, rgba(56,189,248,0.12), transparent 60%),
-    radial-gradient(/* removed */, rgba(168,85,247,0.15), transparent 60%);
-  filter: blur(60px);
-  animation: corePulse 8s infinite alternate;
-  z-index:-1;
-}
-
-@keyframes corePulse {
-  0% { transform: scale(1); opacity: 0.6; }
-  100% { transform: scale(1.25); opacity: 1; }
-}
-
-
-/* === POWERED BUTTONS === */
-.os-actions button {
-  backdrop-filter: blur(6px);
-  transition: all 0.25s ease;
-}
-
-.os-actions button:hover {
-  transform: translateY(-4px) scale(1.05);
-  filter: brightness(1.4);
-}
-
-
-/* === ZYPHER REACTOR CORE === */
-.os-logo {
-  text-shadow:
-    0 0 10px rgba(56,189,248,0.9),
-    0 0 30px rgba(56,189,248,0.8),
-    0 0 60px rgba(168,85,247,0.8),
-    0 0 120px rgba(168,85,247,0.6);
-  animation: zypherPulse 3s ease-in-out infinite;
-}
-
-@keyframes zypherPulse {
-  0% { filter: brightness(0.9); }
-  50% { filter: brightness(1.4); }
-  100% { filter: brightness(0.9); }
-}
-
-
-/* === ENERGY RING === */
-/* /* removed */ removed */ .os-logo/* removed */ {
-  content:"";
-  position:absolute;
-  width:260px;
-  height:260px;
-  /* removed */;
-  border:2px solid rgba(56,189,248,0.5);
-  box-shadow:
-    0 0 30px rgba(56,189,248,0.6),
-    inset 0 0 30px rgba(168,85,247,0.6);
-  animation: /* removed */Spin 12s linear infinite;
-  z-index:-1;
-}
-
-@keyframes /* removed */Spin {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-
-/* === ELECTRIC BUTTONS === */
-.os-actions button {
-  position: relative;
-  overflow:hidden;
-}
-
-.os-actions button/* removed */ {
-  content:"";
-  position:absolute;
-  inset:-2px;
-  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
-  opacity:0;
-  transition:opacity .3s;
-}
-
-.os-actions button:hover/* removed */ {
-  opacity:1;
-  animation: sweep 0.8s linear;
-}
-
-@keyframes sweep {
-  from { transform: translateX(-100%); }
-  to { transform: translateX(100%); }
-}
-
-
-/* === ZYPHER HOLOGRAPHIC CORE === */
-.os-center {
-  position: relative;
-}
-
-.os-center/* removed */ {
-  content:"";
-  position:absolute;
-  top:50%;
-  left:50%;
-  width:420px;
-  height:260px;
-  transform:translate(-50%,-50%);
-  background: radial-gradient(/* removed */ at center,
-    rgba(56,189,248,0.35),
-    rgba(168,85,247,0.25),
-    transparent 70%);
-  filter: blur(60px);
-  opacity:0.8;
-  animation: corePulse 6s ease-in-out infinite;
-  pointer-events:none;
-}
-
-@keyframes corePulse {
-  0% { opacity:0.6; }
-  50% { opacity:1; }
-  100% { opacity:0.6; }
-}
-
-
-/* === ZYPHER HOLOGRAM === */
-.os-logo {
-  letter-spacing:0.35em;
-  background: linear-gradient(90deg,#7dd3fc,#a855f7,#7dd3fc);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  text-shadow:
-    0 0 20px rgba(125,211,252,0.6),
-    0 0 60px rgba(168,85,247,0.6);
-  animation: holoFlicker 4s infinite;
-}
-
-@keyframes holoFlicker {
-  0% { opacity:0.9; }
-  2% { opacity:0.6; }
-  4% { opacity:1; }
-  100% { opacity:0.9; }
-}
-
-
-/* === CONTROL PANEL BUTTONS === */
-.os-actions button {
-  backdrop-filter: blur(10px);
-  background: rgba(0,0,0,0.4);
-  border-radius:8px;
-  transition: all .3s ease;
-}
-
-.os-actions button:hover {
-  transform: translateY(-3px) scale(1.02);
-}
-
-
-/* ===== CINEMATIC CORE LIGHT ===== */
-body::before {
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(60% 30% at 50% 45%, rgba(56,189,248,0.12), transparent 70%),
-    radial-gradient(40% 20% at 50% 55%, rgba(168,85,247,0.15), transparent 80%);
-  filter: blur(80px);
-  pointer-events:none;
-  z-index:0;
-}
-
-
-/* ===== ZYPHER HOLOGRAM ===== */
-.os-logo {
-  font-size:5rem;
-  letter-spacing:0.4em;
-  background:linear-gradient(90deg,#7dd3fc,#a855f7,#7dd3fc);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  text-shadow:
-    0 0 25px rgba(125,211,252,0.8),
-    0 0 80px rgba(168,85,247,0.8);
-  animation: holo 6s ease-in-out infinite;
-}
-
-@keyframes holo {
-  0% { filter:brightness(0.9); }
-  50% { filter:brightness(1.2); }
-  100% { filter:brightness(0.9); }
-}
-
-
-.os-actions button {
-  background:rgba(5,5,10,0.6);
-  backdrop-filter: blur(14px);
-  border-radius:10px;
-  box-shadow:
-    0 0 25px rgba(0,0,0,0.8),
-    inset 0 0 20px rgba(255,255,255,0.03);
-}
-
-.os-actions button:hover {
-  transform:translateY(-4px) scale(1.03);
-}
-
-
-/* ===== FORCE UI ABOVE GLOW ===== */
-.os-root,
-.os-center,
-.os-actions,
-.os-logo {
-  position: relative;
-  z-index: 10;
-}
-
-
-/* CORE OS LAYOUT */
-.os-root {
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-.os-center {
-  text-align:center;
-}
-
-.os-logo {
-  font-size:4.5rem;
-  letter-spacing:0.3em;
-  margin-bottom:60px;
+    0 0 60px #0ea5e9;
 }
 
 .os-actions {
   display:flex;
-  gap:60px;
-  justify-content:center;
+  gap:40px;
+}
+
+.os-actions button {
+  font-size:1rem;
+  padding:20px 50px;
+  background:#020617;
+  border-radius:12px;
+  cursor:pointer;
+  letter-spacing:0.2em;
+  position:relative;
+}
+
+/* Client neon */
+.btn-client {
+  border:2px solid #00f6ff;
+  color:#00f6ff;
+  box-shadow:
+    0 0 20px #00f6ff,
+    0 0 60px #00f6ff;
+}
+
+/* Dev neon */
+.btn-dev {
+  border:2px solid #ff3355;
+  color:#ff3355;
+  box-shadow:
+    0 0 20px #ff3355,
+    0 0 60px #ff3355;
+}
+.gate { display: none; }
+
+.gate:not(.hidden) {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  z-index: 999;
+}
+
+.os-logo {
+  letter-spacing: 0.35em;
+  font-weight: 600;
+  text-transform: uppercase;
 }
