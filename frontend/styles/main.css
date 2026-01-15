@@ -1,7 +1,7 @@
 
 body.os {
   margin:0;
-  background:radial-gradient(circle at top,#0a0020,#000);
+  background:radial-gradient(/* removed */ at top,#0a0020,#000);
   font-family: Orbitron, monospace;
   color:#baffff;
 }
@@ -27,7 +27,7 @@ body.os {
 }
 
 .dot {
-  width:10px;height:10px;border-radius:50%;
+  width:10px;height:10px;/* removed */;
   background:#00ff99;display:inline-block;
   box-shadow:0 0 10px #00ff99;
 }
@@ -199,10 +199,10 @@ body.os {
     0 0 20px #38bdf8,
     0 0 60px #0ea5e9,
     0 0 120px rgba(14,165,233,0.6);
-  animation: reactorPulse 4s infinite alternate;
+  animation: /* removed */Pulse 4s infinite alternate;
 }
 
-@keyframes reactorPulse {
+@keyframes /* removed */Pulse {
   0% { opacity:0.4; transform:scale(0.95); }
   50% { opacity:1; }
   100% { opacity:0.7; transform:scale(1.05); }
@@ -228,7 +228,7 @@ body.os {
 
 body {
   background:
-    radial-gradient(circle at top, #020014 0%, #020014 40%, #000 100%);
+    radial-gradient(/* removed */ at top, #020014 0%, #020014 40%, #000 100%);
   overflow:hidden;
 }
 
@@ -357,12 +357,12 @@ body {
 
 
 /* === ZYPHER CORE AURA === */
-.os-logo::before {
+.os-logo/* removed */ {
   content: "";
   position: absolute;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, rgba(56,189,248,0.35) 0%, rgba(56,189,248,0.15) 30%, transparent 70%);
+  background: radial-gradient(/* removed */, rgba(56,189,248,0.35) 0%, rgba(56,189,248,0.15) 30%, transparent 70%);
   filter: blur(40px);
   z-index: -1;
 }
@@ -373,14 +373,14 @@ body {
 
 
 /* === CORE BACKGROUND ENERGY === */
-/* removed fog */ .os-center::before {
+/* removed fog */ .os-center/* removed */ {
   content:"";
   position:absolute;
   width:600px;
   height:600px;
   background:
-    radial-gradient(circle, rgba(56,189,248,0.12), transparent 60%),
-    radial-gradient(circle, rgba(168,85,247,0.15), transparent 60%);
+    radial-gradient(/* removed */, rgba(56,189,248,0.12), transparent 60%),
+    radial-gradient(/* removed */, rgba(168,85,247,0.15), transparent 60%);
   filter: blur(60px);
   animation: corePulse 8s infinite alternate;
   z-index:-1;
@@ -422,21 +422,21 @@ body {
 
 
 /* === ENERGY RING === */
-/* ring removed */ .os-logo::after {
+/* /* removed */ removed */ .os-logo/* removed */ {
   content:"";
   position:absolute;
   width:260px;
   height:260px;
-  border-radius:50%;
+  /* removed */;
   border:2px solid rgba(56,189,248,0.5);
   box-shadow:
     0 0 30px rgba(56,189,248,0.6),
     inset 0 0 30px rgba(168,85,247,0.6);
-  animation: ringSpin 12s linear infinite;
+  animation: /* removed */Spin 12s linear infinite;
   z-index:-1;
 }
 
-@keyframes ringSpin {
+@keyframes /* removed */Spin {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to { transform: translate(-50%, -50%) rotate(360deg); }
 }
@@ -448,7 +448,7 @@ body {
   overflow:hidden;
 }
 
-.os-actions button::before {
+.os-actions button/* removed */ {
   content:"";
   position:absolute;
   inset:-2px;
@@ -457,7 +457,7 @@ body {
   transition:opacity .3s;
 }
 
-.os-actions button:hover::before {
+.os-actions button:hover/* removed */ {
   opacity:1;
   animation: sweep 0.8s linear;
 }
@@ -473,7 +473,7 @@ body {
   position: relative;
 }
 
-.os-center::before {
+.os-center/* removed */ {
   content:"";
   position:absolute;
   top:50%;
@@ -481,7 +481,7 @@ body {
   width:420px;
   height:260px;
   transform:translate(-50%,-50%);
-  background: radial-gradient(circle at center,
+  background: radial-gradient(/* removed */ at center,
     rgba(56,189,248,0.35),
     rgba(168,85,247,0.25),
     transparent 70%);
@@ -528,4 +528,52 @@ body {
 
 .os-actions button:hover {
   transform: translateY(-3px) scale(1.02);
+}
+
+
+/* ===== CINEMATIC CORE LIGHT ===== */
+body::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(60% 30% at 50% 45%, rgba(56,189,248,0.12), transparent 70%),
+    radial-gradient(40% 20% at 50% 55%, rgba(168,85,247,0.15), transparent 80%);
+  filter: blur(80px);
+  pointer-events:none;
+  z-index:0;
+}
+
+
+/* ===== ZYPHER HOLOGRAM ===== */
+.os-logo {
+  font-size:5rem;
+  letter-spacing:0.4em;
+  background:linear-gradient(90deg,#7dd3fc,#a855f7,#7dd3fc);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:
+    0 0 25px rgba(125,211,252,0.8),
+    0 0 80px rgba(168,85,247,0.8);
+  animation: holo 6s ease-in-out infinite;
+}
+
+@keyframes holo {
+  0% { filter:brightness(0.9); }
+  50% { filter:brightness(1.2); }
+  100% { filter:brightness(0.9); }
+}
+
+
+.os-actions button {
+  background:rgba(5,5,10,0.6);
+  backdrop-filter: blur(14px);
+  border-radius:10px;
+  box-shadow:
+    0 0 25px rgba(0,0,0,0.8),
+    inset 0 0 20px rgba(255,255,255,0.03);
+}
+
+.os-actions button:hover {
+  transform:translateY(-4px) scale(1.03);
 }
