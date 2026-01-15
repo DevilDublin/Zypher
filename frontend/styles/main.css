@@ -373,7 +373,7 @@ body {
 
 
 /* === CORE BACKGROUND ENERGY === */
-.os-center::before {
+/* removed fog */ .os-center::before {
   content:"";
   position:absolute;
   width:600px;
@@ -401,4 +401,68 @@ body {
 .os-actions button:hover {
   transform: translateY(-4px) scale(1.05);
   filter: brightness(1.4);
+}
+
+
+/* === ZYPHER REACTOR CORE === */
+.os-logo {
+  text-shadow:
+    0 0 10px rgba(56,189,248,0.9),
+    0 0 30px rgba(56,189,248,0.8),
+    0 0 60px rgba(168,85,247,0.8),
+    0 0 120px rgba(168,85,247,0.6);
+  animation: zypherPulse 3s ease-in-out infinite;
+}
+
+@keyframes zypherPulse {
+  0% { filter: brightness(0.9); }
+  50% { filter: brightness(1.4); }
+  100% { filter: brightness(0.9); }
+}
+
+
+/* === ENERGY RING === */
+.os-logo::after {
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  border:2px solid rgba(56,189,248,0.5);
+  box-shadow:
+    0 0 30px rgba(56,189,248,0.6),
+    inset 0 0 30px rgba(168,85,247,0.6);
+  animation: ringSpin 12s linear infinite;
+  z-index:-1;
+}
+
+@keyframes ringSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+
+/* === ELECTRIC BUTTONS === */
+.os-actions button {
+  position: relative;
+  overflow:hidden;
+}
+
+.os-actions button::before {
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+  opacity:0;
+  transition:opacity .3s;
+}
+
+.os-actions button:hover::before {
+  opacity:1;
+  animation: sweep 0.8s linear;
+}
+
+@keyframes sweep {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
 }
