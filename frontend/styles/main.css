@@ -273,3 +273,38 @@ body {
   display:flex;
   gap:32px;
 }
+
+
+/* ================================
+   ZYPHER OS BOOT SEQUENCE
+================================ */
+
+.os-center {
+  animation: osBoot 1.6s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes osBoot {
+  0% { opacity: 0; transform: translateY(40px) scale(0.98); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Logo pulse */
+.os-logo {
+  animation: logoPulse 4s infinite ease-in-out;
+}
+
+@keyframes logoPulse {
+  0% { text-shadow: 0 0 10px #00f6ff, 0 0 20px #a855ff; }
+  50% { text-shadow: 0 0 40px #00f6ff, 0 0 80px #a855ff; }
+  100% { text-shadow: 0 0 15px #00f6ff, 0 0 30px #a855ff; }
+}
+
+/* Button hover lift */
+.os-actions button {
+  transition: all 0.25s ease;
+}
+
+.os-actions button:hover {
+  transform: translateY(-4px) scale(1.04);
+}

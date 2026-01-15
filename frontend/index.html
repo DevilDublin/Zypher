@@ -25,34 +25,4 @@
 
 
 
-    <div class="os-actions">
-      <button onclick="location.href='/dashboard'"><span id="clientBtn">CLIENT ACCESS</span></button>
-      <button onclick="openDev()"><span id="devBtn">DEVELOPER TERMINAL</span></button>
-    </div>
-  </div>
-</div>
-
-<div id="dev-gate" class="gate hidden">
-  <div class="gate-box">
-    <div class="gate-title">DEVELOPER ACCESS</div>
-    <input id="devPass" placeholder="Enter access key" type="password">
-    <button onclick="checkDev()">AUTHENTICATE</button>
-    <div id="gateMsg"></div>
-  </div>
-</div>
-
-<script>
-function openDev() {
-  document.getElementById("dev-gate").classList.remove("hidden");
-  document.getElementById("devPass").focus();
-}
-function checkDev() {
-  const p = document.getElementById("devPass").value;
-  if (p === "zypher") location.href = "/dev";
-  else document.getElementById("gateMsg").innerText = "ACCESS DENIED";
-}
-</script>
-
-
-></body>
-</html>
+    
