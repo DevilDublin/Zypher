@@ -19,8 +19,8 @@
                 </div>
 
     <div class="os-actions">
-      <button onclick="location.href='/dashboard'">CLIENT ACCESS</button>
-      <button onclick="openDev()">DEVELOPER TERMINAL</button>
+      <button onclick="location.href='/dashboard'"><span id="clientBtn">CLIENT ACCESS</span></button>
+      <button onclick="openDev()"><span id="devBtn">DEVELOPER TERMINAL</span></button>
     </div>
   </div>
 </div>
@@ -45,6 +45,18 @@ function checkDev() {
   else document.getElementById("gateMsg").innerText = "ACCESS DENIED";
 }
 </script>
+
+
+<div id="devOverlay" class="os-overlay">
+  <div class="os-modal">
+    <h2>Developer Authentication</h2>
+    <input id="devPass" type="password" placeholder="Access Key" />
+    <div class="os-modal-actions">
+      <button id="devLogin">ENTER</button>
+      <button id="devCancel">CANCEL</button>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

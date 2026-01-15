@@ -125,3 +125,40 @@ document.addEventListener("DOMContentLoaded", () => {
        - Do NOT use preventDefault
     ------------------------------ */
 });
+
+
+/* ===== ZYPHER OS CONTROLS ===== */
+const devBtn = document.getElementById("devBtn");
+const clientBtn = document.getElementById("clientBtn");
+const devOverlay = document.getElementById("devOverlay");
+const devLogin = document.getElementById("devLogin");
+const devCancel = document.getElementById("devCancel");
+
+if (devBtn) {
+  devBtn.onclick = () => {
+    devOverlay.style.display = "flex";
+  };
+}
+
+if (devCancel) {
+  devCancel.onclick = () => {
+    devOverlay.style.display = "none";
+  };
+}
+
+if (devLogin) {
+  devLogin.onclick = () => {
+    const pass = document.getElementById("devPass").value;
+    if (pass === "ZYPHER") {
+      window.location.href = "https://zypheragents.com/dev";
+    } else {
+      alert("Access denied");
+    }
+  };
+}
+
+if (clientBtn) {
+  clientBtn.onclick = () => {
+    window.location.href = "https://zypheragents.com/dashboard";
+  };
+}

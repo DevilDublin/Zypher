@@ -139,3 +139,40 @@ body.os {
   color:#000;
   box-shadow:0 0 50px #ff3355;
 }
+
+
+/* OS OVERLAY */
+.os-overlay {
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.85);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.os-modal {
+  background:#020617;
+  border:1px solid #22c55e;
+  box-shadow:0 0 60px #22c55e;
+  padding:40px;
+  border-radius:12px;
+  color:#22c55e;
+  text-align:center;
+}
+
+.os-modal input {
+  width:100%;
+  padding:14px;
+  margin-top:20px;
+  background:black;
+  border:1px solid #22c55e;
+  color:#22c55e;
+}
+
+.os-modal-actions {
+  display:flex;
+  justify-content:space-between;
+  margin-top:20px;
+}
