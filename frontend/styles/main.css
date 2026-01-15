@@ -308,3 +308,49 @@ body {
 .os-actions button:hover {
   transform: translateY(-4px) scale(1.04);
 }
+
+
+/* === HARD CENTER THE OS CORE === */
+.os-root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.os-center {
+  padding-top: 0 !important;
+  justify-content: center !important;
+  text-align: center;
+}
+
+
+/* === ZYPHER CORE FLOAT === */
+.os-logo {
+  animation: coreFloat 6s ease-in-out infinite;
+}
+
+@keyframes coreFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+  100% { transform: translateY(0); }
+}
+
+
+/* === NEON BREATHING BUTTONS === */
+.os-actions button:first-child {
+  animation: cyanPulse 3s infinite alternate;
+}
+
+.os-actions button:last-child {
+  animation: redPulse 3s infinite alternate;
+}
+
+@keyframes cyanPulse {
+  0% { box-shadow: 0 0 15px #00f6ff; }
+  100% { box-shadow: 0 0 45px #00f6ff; }
+}
+
+@keyframes redPulse {
+  0% { box-shadow: 0 0 15px #ff3355; }
+  100% { box-shadow: 0 0 45px #ff3355; }
+}
