@@ -176,3 +176,53 @@ body.os {
   justify-content:space-between;
   margin-top:20px;
 }
+
+
+.os-core {
+  position:absolute;
+  top:45%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+}
+
+.os-logo-core {
+  font-size:5rem;
+  letter-spacing:0.3em;
+  color:#7dd3fc;
+  text-shadow:
+    0 0 20px #38bdf8,
+    0 0 60px #0ea5e9,
+    0 0 120px rgba(14,165,233,0.6);
+  animation: reactorPulse 4s infinite alternate;
+}
+
+@keyframes reactorPulse {
+  0% { opacity:0.4; transform:scale(0.95); }
+  50% { opacity:1; }
+  100% { opacity:0.7; transform:scale(1.05); }
+}
+
+
+.os-buttons {
+  position:absolute;
+  top:65%;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:60px;
+}
+
+#clientBtn {
+  color:#22f7ff;
+  border:2px solid #22f7ff;
+  padding:18px 42px;
+  box-shadow:0 0 30px #22f7ff;
+}
+
+#devBtn {
+  color:#ff3b3b;
+  border:2px solid #ff3b3b;
+  padding:18px 42px;
+  box-shadow:0 0 30px #ff3b3b;
+}
