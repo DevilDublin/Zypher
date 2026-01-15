@@ -226,3 +226,30 @@ body.os {
   padding:18px 42px;
   box-shadow:0 0 30px #ff3b3b;
 }
+
+
+body {
+  background:
+    radial-gradient(circle at top, #020014 0%, #020014 40%, #000 100%);
+  overflow:hidden;
+}
+
+.os-shell {
+  position:fixed;
+  inset:0;
+}
+
+
+.os-core {
+  position:absolute;
+  top:42%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
+.os-buttons {
+  position:absolute;
+  top:60%;
+  left:50%;
+  transform:translateX(-50%);
+}
