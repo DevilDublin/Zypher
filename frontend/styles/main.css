@@ -36,9 +36,9 @@ body.os {
   flex:1;
   display:flex;
   flex-direction:column;
-  justify-content:center;
+  justify-content:flex-start;
   align-items:center;
-  gap:40px;
+  padding-top:140px;
 }
 
 .os-terminal {
@@ -88,4 +88,54 @@ body.os {
   color:#00ff99;
   padding:10px;
   margin:10px 0;
+}
+
+
+/* ZYPHER CORE LOGO */
+.os-logo {
+  font-size:3.5rem;
+  text-align:center;
+  margin-bottom:60px;
+  animation: zypherGlow 4s infinite alternate;
+}
+
+@keyframes zypherGlow {
+  0% {
+    text-shadow: 0 0 10px #00f6ff, 0 0 25px #a855ff;
+    opacity: 0.85;
+  }
+  50% {
+    text-shadow: 0 0 25px #00f6ff, 0 0 60px #a855ff;
+    opacity: 1;
+  }
+  100% {
+    text-shadow: 0 0 15px #00f6ff, 0 0 40px #a855ff;
+    opacity: 0.9;
+  }
+}
+
+
+/* NEON OS BUTTONS */
+.os-actions button:first-child {
+  border:2px solid #00f6ff;
+  color:#00f6ff;
+  box-shadow:0 0 20px #00f6ff;
+}
+
+.os-actions button:first-child:hover {
+  background:#00f6ff;
+  color:#000;
+  box-shadow:0 0 50px #00f6ff;
+}
+
+.os-actions button:last-child {
+  border:2px solid #ff3355;
+  color:#ff3355;
+  box-shadow:0 0 20px #ff3355;
+}
+
+.os-actions button:last-child:hover {
+  background:#ff3355;
+  color:#000;
+  box-shadow:0 0 50px #ff3355;
 }
