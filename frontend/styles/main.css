@@ -50,6 +50,11 @@ body.os {
   letter-spacing:0.15em;
 }
 
+.os-actions {
+  display:flex;
+  gap:60px;
+}
+
 .os-actions button {
   background:transparent;
   border:1px solid #a855ff;
