@@ -422,7 +422,7 @@ body {
 
 
 /* === ENERGY RING === */
-.os-logo::after {
+/* ring removed */ .os-logo::after {
   content:"";
   position:absolute;
   width:260px;
@@ -465,4 +465,67 @@ body {
 @keyframes sweep {
   from { transform: translateX(-100%); }
   to { transform: translateX(100%); }
+}
+
+
+/* === ZYPHER HOLOGRAPHIC CORE === */
+.os-center {
+  position: relative;
+}
+
+.os-center::before {
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:420px;
+  height:260px;
+  transform:translate(-50%,-50%);
+  background: radial-gradient(circle at center,
+    rgba(56,189,248,0.35),
+    rgba(168,85,247,0.25),
+    transparent 70%);
+  filter: blur(60px);
+  opacity:0.8;
+  animation: corePulse 6s ease-in-out infinite;
+  pointer-events:none;
+}
+
+@keyframes corePulse {
+  0% { opacity:0.6; }
+  50% { opacity:1; }
+  100% { opacity:0.6; }
+}
+
+
+/* === ZYPHER HOLOGRAM === */
+.os-logo {
+  letter-spacing:0.35em;
+  background: linear-gradient(90deg,#7dd3fc,#a855f7,#7dd3fc);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:
+    0 0 20px rgba(125,211,252,0.6),
+    0 0 60px rgba(168,85,247,0.6);
+  animation: holoFlicker 4s infinite;
+}
+
+@keyframes holoFlicker {
+  0% { opacity:0.9; }
+  2% { opacity:0.6; }
+  4% { opacity:1; }
+  100% { opacity:0.9; }
+}
+
+
+/* === CONTROL PANEL BUTTONS === */
+.os-actions button {
+  backdrop-filter: blur(10px);
+  background: rgba(0,0,0,0.4);
+  border-radius:8px;
+  transition: all .3s ease;
+}
+
+.os-actions button:hover {
+  transform: translateY(-3px) scale(1.02);
 }
